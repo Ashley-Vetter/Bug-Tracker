@@ -34,3 +34,8 @@ issue();
 
 
 //assigning issues
+const defPerson = ["Ashley V.", "Chandri B.", "Kelo L.", "Peter S."];
+
+for (let is of issueArr){
+    alert(`Issue ${issueArr[is]} is assigned to ${defPerson[i]}`);
+}
