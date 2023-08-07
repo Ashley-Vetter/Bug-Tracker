@@ -14,8 +14,8 @@ function issue(s, d, p, da, pr, pe, st){
     this.project = pr;
     this.personAssigned = pe;
     this.statusOfIssue = st;
+    }
 
-    let numOfIssues = prompt("How many issues would you like to submit?");
 
     //assigning variables to use them in a loop for the object's properties
     let summary = prompt("Please give a summary of the issue you are having.");
@@ -26,14 +26,9 @@ function issue(s, d, p, da, pr, pe, st){
     let personAssigned = prompt("Please enter your name.");
     let statusOfIssue = alert("The status of the issue is: ");
 
-        //this loop asks the user how many issues they want to submit and sends the objects to the array
-        for(i = 1; i < numOfIssues; i++)
-        {
-            let issues = new issue(`${summary}`, `${desc}`, `${personID}`, `${date}`, `${project}`, `${personAssigned}`, `${statusOfIssue}`);
+        let issues = new issue(`${summary}`, `${desc}`, `${personID}`, `${date}`, `${project}`, `${personAssigned}`, `${statusOfIssue}`);
 
-            issueArr.push(issues);
-        }
-}
+        issueArr.push(issues);
 
 issue();
 
