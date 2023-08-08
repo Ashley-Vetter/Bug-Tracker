@@ -1,7 +1,7 @@
 /*Classes .*/
 .input{
     margin: 5px;
-    background: #ded3ce;
+    background-color: #6c6c6c4d;
 }
 
 .label{
@@ -21,11 +21,12 @@
     text-align: center;
     font-size: 35px;
 }
+
 #summary{
     flex-shrink: 0;
     border-radius: 6px;
     border: 1px solid #000;
-    background: #ded3ce;
+    background: #6c6c6c4d;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
 }
 
@@ -33,7 +34,7 @@
     flex-shrink: 0;
     border-radius: 6px;
     border: 1px solid #000;
-    background: #ded3ce;
+    background: #6c6c6c4d;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
     }
 
@@ -42,7 +43,7 @@
     flex-shrink: 0;
     border-radius: 6px;
     border: 1px solid #000;
-    background: #ded3ce;
+    background: #6c6c6c4d;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
 }
 
@@ -51,7 +52,7 @@
     font-family: Rubik;
     width: 68px;
     height: 25px;
-    background: #5b7a86;
+    background: #7296A4;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     padding: 3px;
     margin: 7px;
@@ -59,7 +60,7 @@
 }
 
 #submit:hover{
-    background: #446572;
+    background: #064469;
 }
 
 #cancel{
@@ -80,16 +81,16 @@
 
 /*Element selector*/
 body{
-    background-color: #eee9e7;
+    background-color: rgb(39, 39, 39);
 }
 form{
     width: 451px;
-    height: 555px;
+    height: 600px;
     margin: auto;
     padding: 20px;
     border-radius: 34px;
     border: 2px solid black;
-    background: #94a8ae;
+    background: #d9d9d9;
     color: #000;
     font-family: Rubik;
     font-size: 19px;
@@ -109,11 +110,14 @@ label{
     margin: 5px;
 }
 
+input:focus{
+    outline:1px solid #2F312F;
+}
 
 select{
     padding: 6px 10px;
     border: none;
     border-radius: 4px;
-    background-color: #f1f1f1;
+    background-color: #D0D7E1;
 }
 
