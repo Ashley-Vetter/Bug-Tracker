@@ -9,8 +9,8 @@
         <link rel="stylesheet" href="t-style.css">
     </head>
     <body>
-        <div class="Form">
-            <form>
+        <div id="Form" class="form-popup">
+            <form id="ticket">
                 <legend id="title">Ticket Number</legend>
                 <label class="label">Summary</label><br>
                     <input type="text" id="summary" ><br>
@@ -24,9 +24,10 @@
                 <label class="label">Discovered by</label>
                     <input list="people" class="input">
                     <datalist id="people">
-                        <option value="person1">Person 1</option>
-                        <option value="person2">Person 2</option>
-                        <option value="person3">Person 3</option>
+                        <option value="p1">Person 1</option>
+                        <option value="p2">Person 2</option>
+                        <option value="p3">Person 3</option>
+                        <option value="p4">Person 4</option>
                     </datalist><br>
 
                 <label class="label">Date discovered</label>
@@ -54,9 +55,10 @@
                 <label class="label">Assigned to</label>
                     <input list="people" class="input">
                     <datalist id="people">
-                        <option value="person1">Person 1</option>
-                        <option value="person2">Person 2</option>
-                        <option value="person3">Person 3</option>
+                        <option value="p1">Person 1</option>
+                        <option value="p2">Person 2</option>
+                        <option value="p3">Person 3</option>
+                        <option value="p4">Person 4</option>
                     </datalist><br>
 
                 <label class="label">Resolution Date</label>
@@ -66,11 +68,11 @@
                     <input type="text" id="rsummary" ><br>
 
                 
-                <button type="reset" value="cancel" id="cancel">Cancel</button>
+                <button type="reset" value="cancel" id="cancel" onclick="closeForm()">Cancel</button>
                 <button type="submit" value="submit" id="submit">Submit</button>
             </form>
         </div>
         
-        <script src=""></script>
+        <script src="trial.js"></script>
     </body>
 </html>
