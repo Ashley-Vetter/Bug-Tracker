@@ -12,7 +12,6 @@
         <div class="header">
             <h1 id="head">Ticket Tracker</h1>
             <button id="newTic" onclick="openForm()">Create new Ticket</button>
-
         </div>        
         
         <!--FORM-->
@@ -20,7 +19,7 @@
             <form id="ticket">
                 <legend id="title">Ticket Number</legend>
                 <label class="label">Summary</label><br>
-                    <input type="text" id="summary" ><br>
+                    <input type="text" id="summary" maxlength="50"><br>
 
                 <label class="label">Description</label><br>
                     <input type="text" id="description"><br>
@@ -89,7 +88,7 @@
             </div>
             <div class="ticket">
                 <p id="sum">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error excepturi aperiam nulla nisi minima in harum tempore aliquid debitis voluptate, quaerat suscipit nobis, accusamus autem explicabo eius odio iusto maxime.</p>
-                <p id="prio">Open</p>
+                <p id="prio">Low</p>
                 <p id="assign">Ben</p>
             </div>
             <div class="ticket">

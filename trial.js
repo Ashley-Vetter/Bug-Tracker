@@ -32,3 +32,7 @@ function projects(proName,proID){
 let sum = document.getElementById("sum");
 
 console.log(sum);
+
+
+//Color changing based on priority level
+

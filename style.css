@@ -18,6 +18,31 @@
     border: 1px solid black;
 }
 
+/*IDs*/
+#head{
+    text-align: center;
+    font-size: 35px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#newTic{
+    border-radius: 15px;
+    padding: 8px;
+    margin: 5px;
+    float: right;
+    bottom: 60%;
+    right: 2%;
+    position: relative;
+    background-color: #94a8ae;
+    border: 2px solid #94a8ae;
+    box-shadow: 1px black inset;
+}
+
+#newTic:hover{
+    background-color: #819398;
+    border: 2px solid #819398;
+}
+
 #statusOpen{
     background-color:rgba(112, 128, 144, 0.757);
     border: 1px solid black;
@@ -52,11 +77,10 @@
 }
 
 #prio{
-    padding: 5px;
+    padding: 8px;
     margin: 5px;
-    background-color: #94a8ae;
+    background-color:forestgreen;
     border-radius: 10px;
-    border: 2px solid black;
     float: left;
 }
 
@@ -71,6 +95,7 @@
     float: right;
 }
 
+/*Element selector*/
 body{
     background-color:rgb(39, 39, 39);
 }
