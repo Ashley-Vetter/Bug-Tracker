@@ -49,8 +49,6 @@ body{
     color: #fff;
     padding: 20px 45px 2px 20px;
     text-align: center;
-    
-
 }
 
 .input-box input::placeholder{
@@ -114,6 +112,7 @@ body{
     font-size: 16px;
     color: #fff;
    
+    top: 210px;
     left: 350px;
 }
 #user{
@@ -122,7 +121,7 @@ body{
     font-size: 16px;
     color: #fff;
     
-    top:135px;
+    top: 135px;
     left: 350px;
 
 }
@@ -135,10 +134,6 @@ body{
     border-radius: 10px;
     padding: 30px 40px;
     box-shadow: 5px 10px #0c0c0c;
-   
-
-
-    
 }
 #lol{
     text-align: center;
