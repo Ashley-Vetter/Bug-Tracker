@@ -1,76 +1,80 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Ticket Page</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="t-style.css">
-    </head>
-    <body>
-        <div class="Form">
-            <form>
-                <legend id="title">Ticket Number</legend>
-                <label class="label">Summary</label><br>
-                    <input type="text" id="summary" ><br>
 
-                <label class="label">Description</label><br>
-                    <input type="text" id="description"><br>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ticket Page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="t-style.css">
+</head>
 
-                <label class="label">Project</label>
-                    <input type="" id="project" class="input"><br>
+<body>
+    <div class="Form">
+        <form>
+            <legend id="title">Ticket Number</legend>
+            <label class="label">Summary</label><br>
+            <input type="text" id="summary"><br>
 
-                <label class="label">Discovered by</label>
-                    <input list="people" class="input">
-                    <datalist id="people">
-                        <option value="person1">Person 1</option>
-                        <option value="person2">Person 2</option>
-                        <option value="person3">Person 3</option>
-                    </datalist><br>
+            <label class="label">Description</label><br>
+            <input type="text" id="description"><br>
 
-                <label class="label">Date discovered</label>
-                    <input type="date" class="input"><br>
+            <label class="label">Project</label>
+            <input type="text" id="project" class="input"><br>
 
-                <label class="label">Status</label>
-                    <select class="input">
-                        <option value="open">Open</option>
-                        <option value="resolved">Resolved</option>
-                        <option value="overdue">Overdue</option>
-                    </select>
-                <br>
+            <label for="discovered-by">Discovered By:</label>
+            <input type="text" id="discovered-by" class="autocomplete" placeholder="Enter name" autocomplete="off">
+            <div></div>
+            <br>
+            <label class="label">Date discovered</label>
+            <input type="date" id="date-discovered"><br>
 
-                <label class="label">Priority</label>
-                    <select class="input">
-                        <option value="low">Low</option>
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
-                    </select>
-                <br>
-                
-                <label class="label">Target Date</label>
-                    <input type="date" class="input"><br>
+            <label class="label">Status</label>
+            <select id="status-input">
+                <option value="open">Open</option>
+                <option value="resolved">Resolved</option>
+                <option value="overdue">Overdue</option>
+            </select>
+            <br>
 
-                <label class="label">Assigned to</label>
-                    <input list="people" class="input">
-                    <datalist id="people">
-                        <option value="person1">Person 1</option>
-                        <option value="person2">Person 2</option>
-                        <option value="person3">Person 3</option>
-                    </datalist><br>
+            <label class="label">Priority</label>
+            <select id="priority-input">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <br>
 
-                <label class="label">Resolution Date</label>
-                    <input type="date" class="input"><br>
+            <label class="label">Target Date</label>
+            <input type="date" id="target-date"><br>
 
-                <label class="label">Resolution Summary</label><br>
-                    <input type="text" id="rsummary" ><br>
+            <label for="assigned-to">Assigned To:</label>
+            <input type="text" id="assigned-to" class="autocomplete" placeholder="Enter name">
+            <div></div>
+            <datalist id="assigned people">
+                <option value="Ashley">Ashley</option>
+                <option value="Chandri">Chandri</option>
+                <option value="Kelo">Kelo</option>
+                <option value="Peter">Peter</option>
+            </datalist><br>
 
-                
-                <button type="reset" value="cancel" id="cancel">Cancel</button>
-                <button type="submit" value="submit" id="submit">Submit</button>
-            </form>
-        </div>
-        
-        <script src=""></script>
-    </body>
+            <label class="label">Resolution Date</label>
+            <input type="date" id="res-date"><br>
+
+            <label class="label">Resolution Summary</label><br>
+            <input type="text" id="res-summary"><br>
+
+
+            <button type="reset" value="cancel" id="cancel">Cancel</button>
+            <button type="submit" value="submit" id="submit-form" tag="LI">Submit</button>
+            <div id="msg">
+                <pre></pre>
+            </div>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
 </html>
