@@ -1,0 +1,295 @@
+/*Classes .*/
+.header{
+    width: 100%;
+    height: 100px;
+    padding: 3px;
+    color: #d9d9d9;
+    background-color: slategray;    
+}
+
+.ticket{
+    width: 31%;
+    height: auto;
+    margin: 7px;
+    padding: 2px;
+    display: inline-block;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.ticket p#prio {
+    display: inline;
+    font-size: medium;
+    font-weight: 500;
+    text-align: center;
+    padding: 8px;
+    margin: 5px;
+    margin-left: 20%;
+    border-radius: 10px;
+    float: inline-start;
+}
+
+/*IDs*/
+#head{
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#newTic{
+    border-radius: 15px;
+    padding: 8px;
+    margin: 5px;
+    float: right;
+    bottom: 70%;
+    right: 2%;
+    position: relative;
+    background-color: #94a8ae;
+    border: 2px solid #94a8ae;
+    box-shadow: 1px black inset;
+}
+#newTic:hover{
+    background-color: #819398;
+    border: 2px solid #819398;
+}
+
+#newPer{
+    border-radius: 15px;
+    padding: 8px;
+    margin: 5px;
+    float: right;
+    bottom: 70%;
+    right: 2%;
+    position: relative;
+    background-color: #94a8ae;
+    border: 2px solid #94a8ae;
+    box-shadow: 1px black inset;
+}
+#newPer:hover{
+    background-color: #819398;
+    border: 2px solid #819398;
+}
+
+#newPro{
+    border-radius: 15px;
+    padding: 8px;
+    margin: 5px;
+    float: right;
+    bottom: 70%;
+    right: 2%;
+    position: relative;
+    background-color: #94a8ae;
+    border: 2px solid #94a8ae;
+    box-shadow: 1px black inset;
+}
+#newPro:hover{
+    background-color: #819398;
+    border: 2px solid #819398;
+}
+
+#statusOpen{
+    background-color:rgba(112, 128, 144, 0.757);
+    border: 1px solid black;
+    width: 97%;
+    height: 250px;
+    margin: 10px;
+    padding: 8px;
+}
+
+#statusResolved{
+    background-color: rgba(112, 128, 144, 0.757);
+    border: 1px solid black;
+    width: 97%;
+    height: 250px;
+    margin: 10px;
+    padding: 8px;
+}
+
+#statusOverdue{
+    background-color: rgba(112, 128, 144, 0.757);
+    border: 1px solid black;
+    width: 97%;
+    height: 250px;
+    margin: 10px;
+    padding: 8px;
+}
+
+#sum{
+    padding: 5px;
+    margin: 5px;
+    height: fit-content;
+}
+
+#stat{
+    font-size: medium;
+    padding: 8px;
+    margin: 5px;
+    background-color: lightgray;
+    border-radius: 10px;
+    float: left;
+}
+
+#prio{
+    display: inline;
+    font-size: medium;
+    width: 50px;
+    height: 20px;
+    padding: 8px;
+    margin: 5px;
+    background-color: grey;
+    border-radius: 10px;
+    float: inline-start;
+}
+
+#assign{
+    padding: 2px;
+    margin: 7px;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid black;
+    float: right;
+}
+
+/*Element selector*/
+body{
+    background-color:rgb(39, 39, 39);
+}
+
+h1{
+    color: black;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+/*FORM STYLE*/
+
+/*Classes .*/
+.input{
+    margin: 5px;
+    background-color: #6c6c6c4d;
+}
+
+.priority{
+    width: 50px;
+    height: 15px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    background: #2F312F;
+}
+
+.form-popup{
+    display: none;
+    position: relative;
+}
+
+.form-pop{
+    display: block;
+    position: relative;
+}
+
+/*IDs #*/
+#title{
+    text-align: center;
+    font-size: 35px;
+}
+
+#summary{
+    flex-shrink: 0;
+    border-radius: 6px;
+    border: 1px solid #000;
+    background: #6c6c6c4d;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+#description{
+    flex-shrink: 0;
+    border-radius: 6px;
+    border: 1px solid #000;
+    background: #6c6c6c4d;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+#rsummary{
+    flex-shrink: 0;
+    border-radius: 6px;
+    border: 1px solid #000;
+    background: #6c6c6c4d;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+#submit{
+    font-weight: 400;
+    font-family: Rubik;
+    width: 68px;
+    height: 25px;
+    background: #7296A4;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 3px;
+    margin: 7px;
+    float: right;
+}
+
+#submit:hover{
+    background: #064469;
+}
+
+#cancel{
+    font-weight: 400;
+    font-family: Rubik;
+    width: 68px;
+    height: 25px;
+    background: #ded3ce;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 3px;
+    margin: 7px;
+    float: right;
+}
+
+#cancel:hover{
+    background-color: #ada39f;
+}
+
+/*Element selector*/
+form{
+    width: 451px;
+    height: 600px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 34px;
+    border: 2px solid black;
+    background: #d9d9d9;
+    color: #000;
+    font-family: Rubik;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+label{
+    margin: 5px;
+}
+
+input:focus{
+    outline:1px solid #2F312F;
+}
+
+select{
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #D0D7E1;
+}
+
+/*ChatGPT Bullshit*/
+
