@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
             card.innerHTML = `
                 <p id="sum">${issue.summary}</p>
                 <select id="stat">
-                <select id="stat">
                     <option value="open">Open</option>
                     <option value="resolved">Resolved</option>
                     <option value="overdue">Overdue</option>
