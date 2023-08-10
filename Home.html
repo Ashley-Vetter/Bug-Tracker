@@ -12,8 +12,10 @@
 
 <body>
     <div class="header">
-        <h1 id="head">Ticket Tracker</h1>
+        <h1 id="head">Bug Tracker</h1>
         <button id="newTic" onclick="openForm()">Create new Ticket</button>
+        <button id="newPer">Add a Person</button>
+        <button id="newPro">Create a Project</button>
     </div>
 
     <!--FORM-->
@@ -21,16 +23,16 @@
         <form id="ticket">
             <legend id="title">Ticket Number</legend>
             <label class="label">Summary</label><br>
-            <input type="text" id="summary" maxlength="50"><br>
+            <input type="text" id="summary" maxlength="50" required><br>
 
             <label class="label">Description</label><br>
-            <input type="text" id="description"><br>
+            <input type="text" id="description" required><br>
 
             <label class="label">Project</label>
-            <input type="" id="project" class="input"><br>
+            <input type="" id="project" class="input" required><br>
 
             <label class="label">Discovered by</label>
-            <input list="people" class="input" id="discPerson">
+            <input list="people" class="input" id="discPerson" required>
             <datalist id="people">
                 <option value="p1">Person 1</option>
                 <option value="p2">Person 2</option>
@@ -39,7 +41,7 @@
             </datalist><br>
 
             <label class="label">Date discovered</label>
-            <input type="date" class="input" id="discDate"><br>
+            <input type="date" class="input" id="discDate" required><br>
 
             <label class="label">Status</label>
             <select class="status-select" id="status">
@@ -50,10 +52,10 @@
             <br>
 
             <label class="label">Priority</label>
-            <select class="input" id="priority">
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
+            <select class="input" id="priority" required>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
             </select>
             <br>
 
@@ -61,7 +63,7 @@
             <input type="date" class="input" id="tarDate"><br>
 
             <label class="label">Assigned to</label>
-            <input list="people" class="input" id="assigned">
+            <input list="people" class="input" id="assigned" required>
             <datalist id="people">
                 <option value="p1">Person 1</option>
                 <option value="p2">Person 2</option>

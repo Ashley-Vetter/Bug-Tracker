@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
             card.classList.add('ticket');
             card.innerHTML = `
                 <p id="sum">${issue.summary}</p>
-                <select id="prio">${issue.issuePriority}</select>
+                <p id="prio">${issue.issuePriority}</p>
                 <p id="assign">${issue.personAssigned}</p>
                 <select id=""status>
                     <option value="open">Open</option>
@@ -28,15 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <option value="overdue">Overdue</option>
                 </select>
             `;
-            // Places issue in relevant container. (Open, Resolved and Overdue)
-            const statusValue = issue.statusOfIssue;
-            if (statusValue === 'open') {
-                statusOpen.appendChild(card);
-            } else if (statusValue === 'resolved') {
-                statusResolved.appendChild(card);
-            } else if (statusValue === 'overdue') {
-                statusOverdue.appendChild(card);
-            }
+            ticketContainer.appendChild(card);
         });
     }
 
@@ -132,5 +124,15 @@ let sum = document.getElementById("sum");
 //console.log(sum);
 
 
-//Color changing based on priority level
 
+
+
+/*
+    Creating people
+    Assigning if possible
+    Function to auto add date to target date based on priority level
+    Check login page, remove unneeded stuff --K working
+    Tagging of status, open,resolved,overdue --A working
+    Color changing based on priority level -- done
+    Reopen form after stored with card 
+ */

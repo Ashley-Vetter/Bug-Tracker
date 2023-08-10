@@ -18,10 +18,22 @@
     border: 1px solid black;
 }
 
+.ticket p#prio {
+    display: inline;
+    font-size: medium;
+    font-weight: 500;
+    text-align: center;
+    padding: 8px;
+    margin: 5px;
+    margin-left: 20%;
+    border-radius: 10px;
+    float: inline-start;
+}
+
 /*IDs*/
 #head{
     text-align: center;
-    font-size: 35px;
+    font-size: 40px;
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -30,15 +42,48 @@
     padding: 8px;
     margin: 5px;
     float: right;
-    bottom: 60%;
+    bottom: 70%;
     right: 2%;
     position: relative;
     background-color: #94a8ae;
     border: 2px solid #94a8ae;
     box-shadow: 1px black inset;
 }
-
 #newTic:hover{
+    background-color: #819398;
+    border: 2px solid #819398;
+}
+
+#newPer{
+    border-radius: 15px;
+    padding: 8px;
+    margin: 5px;
+    float: right;
+    bottom: 70%;
+    right: 2%;
+    position: relative;
+    background-color: #94a8ae;
+    border: 2px solid #94a8ae;
+    box-shadow: 1px black inset;
+}
+#newPer:hover{
+    background-color: #819398;
+    border: 2px solid #819398;
+}
+
+#newPro{
+    border-radius: 15px;
+    padding: 8px;
+    margin: 5px;
+    float: right;
+    bottom: 70%;
+    right: 2%;
+    position: relative;
+    background-color: #94a8ae;
+    border: 2px solid #94a8ae;
+    box-shadow: 1px black inset;
+}
+#newPro:hover{
     background-color: #819398;
     border: 2px solid #819398;
 }
@@ -76,12 +121,25 @@
     height: fit-content;
 }
 
-#prio{
+#stat{
+    font-size: medium;
     padding: 8px;
     margin: 5px;
-    background-color:forestgreen;
+    background-color: lightgray;
     border-radius: 10px;
     float: left;
+}
+
+#prio{
+    display: inline;
+    font-size: medium;
+    width: 50px;
+    height: 20px;
+    padding: 8px;
+    margin: 5px;
+    background-color: grey;
+    border-radius: 10px;
+    float: inline-start;
 }
 
 #assign{
@@ -233,4 +291,5 @@ select{
     background-color: #D0D7E1;
 }
 
+/*ChatGPT Bullshit*/
 
