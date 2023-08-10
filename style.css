@@ -125,7 +125,7 @@
     font-size: medium;
     padding: 8px;
     margin: 5px;
-    background-color: lightgray;
+    background-color: gray;
     border-radius: 10px;
     float: left;
 }
@@ -290,6 +290,3 @@ select{
     border-radius: 4px;
     background-color: #D0D7E1;
 }
-
-/*ChatGPT Bullshit*/
-

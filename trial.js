@@ -20,14 +20,38 @@ document.addEventListener('DOMContentLoaded', function () {
             card.classList.add('ticket');
             card.innerHTML = `
                 <p id="sum">${issue.summary}</p>
-                <p id="prio">${issue.issuePriority}</p>
-                <p id="assign">${issue.personAssigned}</p>
-                <select id=""status>
+                <select id="stat">
                     <option value="open">Open</option>
                     <option value="resolved">Resolved</option>
                     <option value="overdue">Overdue</option>
                 </select>
+                <p id="prio" class="${issue.issuePriority}">${issue.issuePriority}</p>
+                <p id="assign">${issue.personAssigned}</p>
             `;
+
+            const prio = card.querySelector('#prio'); // Select the priority element within the card
+
+            // Set background color based on issue priority
+            if (issue.issuePriority === "Low") {
+                prio.style.backgroundColor = 'lightgreen';
+            }
+            else if (issue.issuePriority === "Medium") {
+                prio.style.backgroundColor = 'lightsalmon';
+            }
+            else if (issue.issuePriority === "High") {
+                prio.style.backgroundColor = 'lightcoral';
+            };
+
+            // Places issue in relevant container (Open, Resolved, Overdue)
+            const statusValue = issue.statusOfIssue;
+            if(statusValue === 'open'){
+                statusOpen.appendChild(card);
+            }else if(statusValue === 'resolved'){
+                statusResolved.appendChild(card);
+            } else if(statusValue === 'overdue'){
+                statusOverdue.appendChild(card);
+            }
+            
             ticketContainer.appendChild(card);
         });
     }
