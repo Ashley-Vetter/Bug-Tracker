@@ -20,10 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
             card.classList.add('ticket');
             card.innerHTML = `
                 <p id="sum">${issue.summary}</p>
-                <p id="prio">${issue.issuePriority}</p>
-                <select id="prio">${issue.issuePriority}</select>
-                <p id="assign">${issue.personAssigned}</p>
-                <select id=""status>
+                <select id="stat">
                     <option value="open">Open</option>
                     <option value="resolved">Resolved</option>
                     <option value="overdue">Overdue</option>
@@ -54,8 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if(statusValue === 'overdue'){
                 statusOverdue.appendChild(card);
             }
-            
-            ticketContainer.appendChild(card);
         });
     }
 
@@ -145,7 +140,6 @@ class projects {
         this.id = proID;
     }
 }
-
 
 /*
     Creating people

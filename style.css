@@ -8,6 +8,7 @@
 }
 
 .ticket{
+    display: grid;
     width: 31%;
     height: auto;
     margin: 7px;
@@ -48,8 +49,7 @@
     background-color: #94a8ae;
     border: 2px solid #94a8ae;
     box-shadow: 1px black inset;
-}
-#newTic:hover{
+}#newTic:hover{
     background-color: #819398;
     border: 2px solid #819398;
 }
@@ -65,8 +65,7 @@
     background-color: #94a8ae;
     border: 2px solid #94a8ae;
     box-shadow: 1px black inset;
-}
-#newPer:hover{
+}#newPer:hover{
     background-color: #819398;
     border: 2px solid #819398;
 }
@@ -82,8 +81,7 @@
     background-color: #94a8ae;
     border: 2px solid #94a8ae;
     box-shadow: 1px black inset;
-}
-#newPro:hover{
+}#newPro:hover{
     background-color: #819398;
     border: 2px solid #819398;
 }
@@ -128,18 +126,6 @@
     background-color: gray;
     border-radius: 10px;
     float: left;
-}
-
-#prio{
-    display: inline;
-    font-size: medium;
-    width: 50px;
-    height: 20px;
-    padding: 8px;
-    margin: 5px;
-    background-color: grey;
-    border-radius: 10px;
-    float: inline-start;
 }
 
 #assign{
@@ -230,9 +216,7 @@ h1{
     padding: 3px;
     margin: 7px;
     float: right;
-}
-
-#submit:hover{
+}#submit:hover{
     background: #064469;
 }
 
@@ -246,9 +230,7 @@ h1{
     padding: 3px;
     margin: 7px;
     float: right;
-}
-
-#cancel:hover{
+}#cancel:hover{
     background-color: #ada39f;
 }
 
@@ -274,14 +256,12 @@ input[type=text] {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
+}input:focus{
+    outline:1px solid #2F312F;
 }
 
 label{
     margin: 5px;
-}
-
-input:focus{
-    outline:1px solid #2F312F;
 }
 
 select{
