@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             card.innerHTML = `
                 <p id="sum">${issue.summary}</p>
                 <p id="prio">${issue.issuePriority}</p>
+                <select id="prio">${issue.issuePriority}</select>
                 <p id="assign">${issue.personAssigned}</p>
                 <select id=""status>
                     <option value="open">Open</option>
@@ -28,7 +29,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     <option value="overdue">Overdue</option>
                 </select>
             `;
-            ticketContainer.appendChild(card);
+            // Places issue in relevant container. (Open, Resolved and Overdue)
+            const statusValue = issue.statusOfIssue;
+            if (statusValue === 'open') {
+                statusOpen.appendChild(card);
+            } else if (statusValue === 'resolved') {
+                statusResolved.appendChild(card);
+            } else if (statusValue === 'overdue') {
+                statusOverdue.appendChild(card);
+            }
         });
     }
 
