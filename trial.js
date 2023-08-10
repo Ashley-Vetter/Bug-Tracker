@@ -26,7 +26,22 @@ document.addEventListener('DOMContentLoaded', function () {
                     <option value="resolved">Resolved</option>
                     <option value="overdue">Overdue</option>
                 </select>
+                <p id="prio" class="${issue.issuePriority}">${issue.issuePriority}</p>
+                <p id="assign">${issue.personAssigned}</p>
             `;
+            
+            const prio = card.querySelector('#prio'); // Select the priority element within the card
+            // Set background color based on issue priority
+            if (issue.issuePriority === "Low") {
+                prio.style.backgroundColor = 'lightgreen';
+            }
+            else if (issue.issuePriority === "Medium") {
+                prio.style.backgroundColor = 'lightsalmon';
+            }
+            else if (issue.issuePriority === "High") {
+                prio.style.backgroundColor = 'lightcoral';
+            };
+
             // Places issue in relevant container. (Open, Resolved and Overdue)
             const statusValue = issue.statusOfIssue;
             if(statusValue === 'open'){
@@ -83,7 +98,7 @@ function openForm() {
     document.getElementById("statusResolved").style.display = "none";
     document.getElementById("statusOverdue").style.display = "none";
 }
-
+//Close popup form
 function closeForm() {
     document.getElementById("Form").style.display = "none";
     document.getElementById("statusOpen").style.display = "block";
@@ -126,7 +141,7 @@ class projects {
 }
 
 /*
-    Creating people
+    Creating people 
     Assigning if possible
     Function to auto add date to target date based on priority level
     Check login page, remove unneeded stuff --K working
