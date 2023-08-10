@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.forms[0].reset();      //clears the form
     }
 
+    //create new projects
     const createProjects = () => {      //calls the projects constructor
         let newProject = new projects(
             document.getElementById('proName'),
