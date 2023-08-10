@@ -139,6 +139,34 @@ class projects {
         this.id = proID;
     }
 }
+function openFormper() {
+    document.getElementById("PersonForm").style.display = "block";
+    document.getElementById("statusOpen").style.display = "none";
+    document.getElementById("statusResolved").style.display = "none";
+    document.getElementById("statusOverdue").style.display = "none";
+
+ 
+}
+
+function openFormpro() {
+    document.getElementById("ProjectForm").style.display = "block";
+    document.getElementById("statusOpen").style.display = "none";
+    document.getElementById("statusResolved").style.display = "none";
+    document.getElementById("statusOverdue").style.display = "none";
+}
+
+function closeFormper() {
+    document.getElementById("PersonForm").style.display = "none";
+    document.getElementById("statusOpen").style.display = "block";
+    document.getElementById("statusResolved").style.display = "block";
+    document.getElementById("statusOverdue").style.display = "block";
+}
+function closeFormpro() {
+    document.getElementById("ProjectForm").style.display = "none";
+    document.getElementById("statusOpen").style.display = "block";
+    document.getElementById("statusResolved").style.display = "block";
+    document.getElementById("statusOverdue").style.display = "block";
+}
 
 /*
     Creating people

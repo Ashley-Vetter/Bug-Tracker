@@ -14,7 +14,7 @@
     <div class="header">
         <h1 id="head">Bug Tracker</h1>
         <button id="newTic" onclick="openForm()">Create new Ticket</button>
-        <button id="newPer">Add a Person</button>
+        <button id="newPer" >Add a Person</button>
         <button id="newPro">Create a Project</button>
     </div>
 
@@ -81,6 +81,43 @@
             <button type="reset" value="cancel" id="cancel" onclick="closeForm()">Cancel</button>
             <button type="submit" value="submit" id="submit">Submit</button>
         </form>
+    </div>
+    <div id="PersonForm" class="form-popup">
+        <form id="people">
+            <legend id="title">Person</legend>
+            <label class="label">First Name</label><br>
+            <input type="text" id="fName" maxlength="50" required><br>
+
+            <label class="label">Last Name</label><br>
+            <input type="text" id="lName" required><br>
+
+            <label class="label">E-mail</label>
+            <input type="" id="email" class="input" required><br>
+
+            <label class="label">Username</label>
+            <input list="people" class="input" id="uName" required>
+          
+
+
+            <button type="reset" value="cancel" id="cancel" onclick="closeFormper()">Cancel</button>
+            <button type="submit" value="submit" id="submit">Submit</button>
+        </form>
+
+    <div id="ProjectForm" class="form-popup">
+       
+        <form id="project">
+            <legend id="title">Project</legend>
+            <label class="label">Project Name</label><br>
+            <input type="text" id="proName" maxlength="50" required><br>
+
+            <label class="label">Project ID</label><br>
+            <input type="text" id="proID" required><br>
+
+
+            <button type="reset" value="cancel" id="cancel" onclick="closeFormpro()">Cancel</button>
+            <button type="submit" value="submit" id="submit">Submit</button>
+        </form>
+
     </div>
 
     <div class="form-pop" id="statusOpen" style="overflow-y: auto">
