@@ -10,7 +10,7 @@
 .ticket{
     display: inline-block;
     position: relative;
-    width: 31%;
+    width: 25%;
     height: auto;
     margin: 8px;
     padding: 5px;
@@ -242,6 +242,7 @@ form{
     width: 451px;
     height: 600px;
     margin: auto;
+    margin-top: 40px;
     padding: 20px;
     border-radius: 34px;
     border: 2px solid black;

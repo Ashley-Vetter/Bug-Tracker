@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
             `;
             
             const prio = card.querySelector('#prio'); // Select the priority element within the card
+            
             // Set background color based on issue priority
             if (issue.issuePriority === "Low") {
                 prio.style.backgroundColor = 'lightgreen';
@@ -50,6 +51,11 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if(statusValue === 'overdue'){
                 statusOverdue.appendChild(card);
             }
+
+            // Add a click event listener to the card
+            card.addEventListener('click', () => {
+                openForm(); // Display the form
+            });
         });
     }
 
@@ -77,17 +83,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Storing form data
     function storeData(data) {
-        localStorage.setItem('issueData', JSON.stringify(data));        // Store the issueArr in LocalStorage
+        localStorage.setItem('issueData', JSON.stringify(data));      // Store the issueArr in LocalStorage
         console.log('stored', { data });
         window.location.href = 'Home.html';
     }
 
     // Event listener for the form submission
-    const submitButton = document.getElementById('submit');
-    submitButton.addEventListener('click', function (e) {
-        e.preventDefault();     // Prevent form submission
-        createTicket();     // Call the createTicket function
+        const submitButton = document.getElementById('submit');
+        submitButton.addEventListener('click', function (e) {
+            e.preventDefault();     // Prevent form submission
+            createTicket();     // Call the createTicket function
     });
+
+    // Create the edit form for each card
+        const editForm = document.createElement('form');
+        editForm.classList.add('edit-form');
+        editForm.style.display = 'none'; // Initially hide the form
+        editForm.innerHTML = ``;
+        card.appendChild(editForm);
 });
 
 //Form Popup
