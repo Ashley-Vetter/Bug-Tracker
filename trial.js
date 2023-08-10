@@ -21,28 +21,13 @@ document.addEventListener('DOMContentLoaded', function () {
             card.innerHTML = `
                 <p id="sum">${issue.summary}</p>
                 <select id="stat">
+                <select id="stat">
                     <option value="open">Open</option>
                     <option value="resolved">Resolved</option>
                     <option value="overdue">Overdue</option>
                 </select>
-                <p id="prio" class="${issue.issuePriority}">${issue.issuePriority}</p>
-                <p id="assign">${issue.personAssigned}</p>
             `;
-
-            const prio = card.querySelector('#prio'); // Select the priority element within the card
-
-            // Set background color based on issue priority
-            if (issue.issuePriority === "Low") {
-                prio.style.backgroundColor = 'lightgreen';
-            }
-            else if (issue.issuePriority === "Medium") {
-                prio.style.backgroundColor = 'lightsalmon';
-            }
-            else if (issue.issuePriority === "High") {
-                prio.style.backgroundColor = 'lightcoral';
-            };
-
-            // Places issue in relevant container (Open, Resolved, Overdue)
+            // Places issue in relevant container. (Open, Resolved and Overdue)
             const statusValue = issue.statusOfIssue;
             if(statusValue === 'open'){
                 statusOpen.appendChild(card);
@@ -124,12 +109,11 @@ function Issue(summary, description, project, personDiscoveredBy, discDate, stat
 //Contructor function for a person(?)
 
 class people {
-    constructor(fName, lName, email, uName, profPic) {
+    constructor(fName, lName, email, uName) {
         this.name = fName;
         this.surname = lName;
         this.email = email;
         this.useName = uName;
-        this.pfp = profPic;
     }
 }
 
