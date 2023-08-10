@@ -1,5 +1,7 @@
 const issueArr = [];
 const defPerson = ["Ashley V.", "Chandri B.", "Kelo L.", "Peter S."];
+const peopleArr = [];
+const projectArr = [];
 
 document.addEventListener('DOMContentLoaded', function () {
     // Load existing data from localStorage or initiaalise an empty array
@@ -76,6 +78,30 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('added', { issueArr });     // Check if array is updated
     }
 
+    //Create new people
+    const createPeople = () => {
+        let newPerson = new people(     //Calla the people constructor
+            document.getElementById('fName').value,
+            document.getElementById('lName').value,
+            document.getElementById('email').value,
+            document.getElementById('uName').value
+        );
+        peopleArr.push(newPerson);      //Push the new person to the people array
+        storeData(peopleArr);       //Call the storeData function
+        document.forms[0].reset();      //clears the form
+    }
+
+    const createProjects = () => {      //calls the projects constructor
+        let newProject = new projects(
+            document.getElementById('proName'),
+            document.getElementById('proID')
+        );
+
+        projectArr.push(newProject);        //pushes the new project to the projects array
+        storeData(projectArr);      //calls the storeData function
+        document.forms[0].reset();      //clears the form
+    }
+
     // Storing form data
     function storeData(data) {
         localStorage.setItem('issueData', JSON.stringify(data));        // Store the issueArr in LocalStorage
@@ -123,21 +149,17 @@ function Issue(summary, description, project, personDiscoveredBy, discDate, stat
 
 //Contructor function for a person(?)
 
-class people {
-    constructor(fName, lName, email, uName) {
+function people (fName, lName, email, uName) {
         this.name = fName;
         this.surname = lName;
         this.email = email;
         this.useName = uName;
-    }
 }
 
 //Contructor function for a project(?)
-class projects {
-    constructor(proName, proID) {
+function projects (proName, proID) {
         this.name = proName;
         this.id = proID;
-    }
 }
 
 /*
