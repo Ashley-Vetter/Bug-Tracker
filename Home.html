@@ -42,7 +42,7 @@
             <input type="date" class="input" id="discDate"><br>
 
             <label class="label">Status</label>
-            <select class="input" id="status">
+            <select class="status-select" id="status">
                 <option value="open">Open</option>
                 <option value="resolved">Resolved</option>
                 <option value="overdue">Overdue</option>
@@ -82,19 +82,13 @@
     </div>
 
     <div class="form-pop" id="statusOpen" style="overflow-y: auto">
-        <h1>Open</h1>
-        <div id="ticketContainer">
-
-        </div>
-
+        <h1 id="open">Open</h1>
     </div>
     <div class="form-pop" id="statusResolved" style="overflow-y: auto">
-        <h1>Resolved</h1>
-
+        <h1 id="resolved">Resolved</h1>
     </div>
     <div class="form-pop" id="statusOverdue" style="overflow-y: auto">
-        <h1>Overdue</h1>
-
+        <h1 id="overdue">Overdue</h1>
     </div>
 
 

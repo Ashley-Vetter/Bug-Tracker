@@ -10,16 +10,33 @@ document.addEventListener('DOMContentLoaded', function () {
     if (storedIssueData) {
         const issueArr = JSON.parse(storedIssueData);
         const ticketContainer = document.getElementById('ticketContainer');
+        const statusOpen = document.getElementById('statusOpen');
+        const statusResolved = document.getElementById('statusResolved');
+        const statusOverdue = document.getElementById('statusOverdue');
+
         // Loop through the issueArr to generate cards
         issueArr.forEach(issue => {
             const card = document.createElement('div');
             card.classList.add('ticket');
             card.innerHTML = `
                 <p id="sum">${issue.summary}</p>
-                <p id="prio">${issue.issuePriority}</p>
+                <select id="prio">${issue.issuePriority}</select>
                 <p id="assign">${issue.personAssigned}</p>
+                <select id=""status>
+                    <option value="open">Open</option>
+                    <option value="resolved">Resolved</option>
+                    <option value="overdue">Overdue</option>
+                </select>
             `;
-            ticketContainer.appendChild(card);
+            // Places issue in relevant container. (Open, Resolved and Overdue)
+            const statusValue = issue.statusOfIssue;
+            if (statusValue === 'open') {
+                statusOpen.appendChild(card);
+            } else if (statusValue === 'resolved') {
+                statusResolved.appendChild(card);
+            } else if (statusValue === 'overdue') {
+                statusOverdue.appendChild(card);
+            }
         });
     }
 
