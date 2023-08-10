@@ -20,14 +20,10 @@ document.addEventListener('DOMContentLoaded', function () {
             card.classList.add('ticket');
             card.innerHTML = `
                 <p id="sum">${issue.summary}</p>
-<<<<<<< HEAD
-                <select id="stat">
-=======
                 <p id="prio">${issue.issuePriority}</p>
                 <select id="prio">${issue.issuePriority}</select>
                 <p id="assign">${issue.personAssigned}</p>
                 <select id=""status>
->>>>>>> 951278bf6ee734b621060843f4b8d835121bb1f6
                     <option value="open">Open</option>
                     <option value="resolved">Resolved</option>
                     <option value="overdue">Overdue</option>
@@ -35,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p id="prio" class="${issue.issuePriority}">${issue.issuePriority}</p>
                 <p id="assign">${issue.personAssigned}</p>
             `;
-<<<<<<< HEAD
 
             const prio = card.querySelector('#prio'); // Select the priority element within the card
 
@@ -61,17 +56,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             
             ticketContainer.appendChild(card);
-=======
-            // Places issue in relevant container. (Open, Resolved and Overdue)
-            const statusValue = issue.statusOfIssue;
-            if (statusValue === 'open') {
-                statusOpen.appendChild(card);
-            } else if (statusValue === 'resolved') {
-                statusResolved.appendChild(card);
-            } else if (statusValue === 'overdue') {
-                statusOverdue.appendChild(card);
-            }
->>>>>>> 951278bf6ee734b621060843f4b8d835121bb1f6
         });
     }
 
@@ -161,13 +145,6 @@ class projects {
         this.id = proID;
     }
 }
-
-let sum = document.getElementById("sum");
-
-//console.log(sum);
-
-
-
 
 
 /*
