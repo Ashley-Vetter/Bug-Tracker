@@ -10,33 +10,24 @@ document.addEventListener('DOMContentLoaded', function () {
     if (storedIssueData) {
         const issueArr = JSON.parse(storedIssueData);
         const ticketContainer = document.getElementById('ticketContainer');
+        const statusOpen = document.getElementById('statusOpen');
+        const statusResolved = document.getElementById('statusResolved');
+        const statusOverdue = document.getElementById('statusOverdue');
+
         // Loop through the issueArr to generate cards
         issueArr.forEach(issue => {
             const card = document.createElement('div');
             card.classList.add('ticket');
             card.innerHTML = `
                 <p id="sum">${issue.summary}</p>
-                <select class="input" id="stat">
-                    <option value=""></option>
+                <p id="prio">${issue.issuePriority}</p>
+                <p id="assign">${issue.personAssigned}</p>
+                <select id=""status>
                     <option value="open">Open</option>
                     <option value="resolved">Resolved</option>
                     <option value="overdue">Overdue</option>
                 </select>
-                <p id="prio" class="${issue.issuePriority}">${issue.issuePriority}</p>
-                <p id="assign">${issue.personAssigned}</p>
             `;
-            const prio = card.querySelector('#prio'); // Select the priority element within the card
-
-            // Set background color based on issue priority
-            if (issue.issuePriority === "Low") {
-                prio.style.backgroundColor = 'lightgreen';
-            }
-            else if (issue.issuePriority === "Medium") {
-                prio.style.backgroundColor = 'lightsalmon';
-            }
-            else if (issue.issuePriority === "High") {
-                prio.style.backgroundColor = 'lightcoral';
-            }
             ticketContainer.appendChild(card);
         });
     }
