@@ -13,9 +13,9 @@
 <body>
     <div class="header">
         <h1 id="head">Bug Tracker</h1>
-        <button id="newTic" onclick="openForm()">Create new Ticket</button>
-        <button id="newPer" onclick="openFormper()">Add a Person</button>
-        <button id="newPro" onclick="openFormpro()">Create a Project</button>
+        <button id="newTic">Create new Ticket</button>
+        <button id="newPer">Add a Person</button>
+        <button id="newPro">Create a Project</button>
     </div>
 
     <!--TICKET FORM-->
@@ -77,43 +77,7 @@
             <label class="label">Resolution Summary</label><br>
             <input type="text" id="rsummary"><br>
 
-            <button type="reset" value="cancel" id="cancel" onclick="closeForm()">Cancel</button>
-            <button type="submit" value="submit" id="submit">Submit</button>
-        </form>
-    </div>
-
-    <!--PEOPLE FORM-->
-    <div id="personForm" class="form-popup">
-        <form>
-            <legend id="title">Person</legend>
-            <label class="label">First Name</label>
-            <input type="text" id="fName" class="input" required><br>
-
-            <label class="label">Last Name</label>
-            <input type="text" id="lName" class="input" required><br>
-
-            <label class="label">E-mail</label>
-            <input type="email" id="email" class="input" required><br>
-
-            <label class="label">Username</label>
-            <input list="text" class="input" id="uName" required><br>
-
-            <button type="reset" value="cancel" id="cancel" onclick="closeFormper()">Cancel</button>
-            <button type="submit" value="submit" id="submit">Submit</button>
-        </form>
-    </div>
-
-    <!--PROJECT FORM-->
-    <div id="projectForm" class="form-popup">
-        <form>
-            <legend id="title">Project</legend>
-            <label class="label">Project Name</label>
-            <input type="text" id="proName" class="input" required><br>
-
-            <label class="label">Project ID</label>
-            <input type="text" id="proID" class="input" required><br>
-
-            <button type="reset" value="cancel" id="cancel" onclick="closeFormpro()">Cancel</button>
+            <button type="reset" value="cancel" id="closeTicket">Cancel</button>
             <button type="submit" value="submit" id="submit">Submit</button>
         </form>
     </div>
@@ -129,9 +93,59 @@
     <div class="form-pop" id="statusOverdue" style="overflow-y: auto">
         <h1 id="overdue">Overdue</h1>
     </div>
-    <!--END-->
+    <!--FORM END-->
+    <!--People form Start-->
+    <div id="PersonForm" class="form-popup">
+        <form id="people">
+            <legend id="title">Person</legend>
+            <label class="label">First Name</label><br>
+            <input type="text" id="fName" maxlength="50" required><br>
 
-    <script src="trial.js"></script>
+            <label class="label">Last Name</label><br>
+            <input type="text" id="lName" required><br>
+
+            <label class="label">E-mail</label>
+            <input type="" id="email" class="input" required><br>
+
+            <label class="label">Username</label>
+            <input list="people" class="input" id="uName" required>
+
+            <button type="reset" value="cancel" id="closePeople">Cancel</button>
+            <button type="submit" value="submit" id="submit">Submit</button>
+        </form>
+
+        <!--People END-->
+        <!--STATUS STUFF-->
+        <div class="form-pop" id="statusOpen" style="overflow-y: auto">
+            <h1 id="open">Open</h1>
+        </div>
+
+        <div class="form-pop" id="statusResolved" style="overflow-y: auto">
+            <h1 id="resolved">Resolved</h1>
+        </div>
+
+        <div class="form-pop" id="statusOverdue" style="overflow-y: auto">
+            <h1 id="overdue">Overdue</h1>
+        </div>
+        <!--END-->
+    </div>
+    <!--People END-->
+    <div>
+        <div id="ProjectForm" class="form-popup">
+
+            <form id="project">
+                <legend id="title">Project</legend>
+                <label class="label">Project Name</label><br>
+                <input type="text" id="proName" maxlength="50" required><br>
+
+                <label class="label">Project ID</label><br>
+                <input type="text" id="proID" required><br>
+
+                <button type="reset" value="cancel" id="closeProject">Cancel</button>
+                <button type="submit" value="submit" id="submit">Submit</button>
+            </form>
+
+            <script src="trial.js"></script>
 </body>
 
 </html>

@@ -8,17 +8,16 @@
 }
 
 .ticket {
-<<<<<<< Updated upstream
     width: 31%;
-=======
-    display: inline-block;
-    position: relative;
-    width: 25%;
->>>>>>> Stashed changes
     height: auto;
     margin: 7px;
     padding: 2px;
     display: inline-block;
+    position: relative;
+    width: 25%;
+    height: auto;
+    margin: 8px;
+    padding: 5px;
     background-color: #d9d9d9;
     border-radius: 10px;
     border: 1px solid black;
@@ -41,6 +40,8 @@
     text-align: center;
     font-size: 40px;
     font-family: 'Times New Roman', Times, serif;
+    margin: 10px;
+    padding: 6px;
 }
 
 #newTic {
@@ -48,7 +49,7 @@
     padding: 8px;
     margin: 5px;
     float: right;
-    bottom: 70%;
+    bottom: 60%;
     right: 2%;
     position: relative;
     background-color: #94a8ae;
@@ -66,7 +67,7 @@
     padding: 8px;
     margin: 5px;
     float: right;
-    bottom: 70%;
+    bottom: 60%;
     right: 2%;
     position: relative;
     background-color: #94a8ae;
@@ -84,7 +85,7 @@
     padding: 8px;
     margin: 5px;
     float: right;
-    bottom: 70%;
+    bottom: 60%;
     right: 2%;
     position: relative;
     background-color: #94a8ae;
@@ -98,11 +99,7 @@
 }
 
 #statusOpen {
-<<<<<<< Updated upstream
     background-color: rgba(112, 128, 144, 0.757);
-=======
-    background-color: rgba(174, 174, 175, 0.757);
->>>>>>> Stashed changes
     border: 1px solid black;
     width: 97%;
     height: 250px;
@@ -111,11 +108,7 @@
 }
 
 #statusResolved {
-<<<<<<< Updated upstream
     background-color: rgba(112, 128, 144, 0.757);
-=======
-    background-color: rgba(174, 174, 175, 0.757);
->>>>>>> Stashed changes
     border: 1px solid black;
     width: 97%;
     height: 250px;
@@ -124,12 +117,9 @@
 }
 
 #statusOverdue {
-<<<<<<< Updated upstream
-    background-color: rgba(112, 128, 144, 0.757);
-=======
-    background-color: rgba(174, 174, 175, 0.757);
->>>>>>> Stashed changes
-    border: 1px solid black;
+    <<<<<<< Updated upstream background-color: rgba(112, 128, 144, 0.757);
+    =======background-color: rgba(174, 174, 175, 0.757);
+    >>>>>>>Stashed changes border: 1px solid black;
     width: 97%;
     height: 250px;
     margin: 10px;
@@ -146,12 +136,11 @@
     font-size: medium;
     padding: 8px;
     margin: 5px;
-    background-color: lightgray;
+    background-color: #94a8ae;
     border-radius: 10px;
     float: left;
 }
 
-<<<<<<< Updated upstream
 #prio {
     display: inline;
     font-size: medium;
@@ -164,8 +153,6 @@
     float: inline-start;
 }
 
-=======
->>>>>>> Stashed changes
 #assign {
     padding: 2px;
     margin: 7px;
@@ -184,8 +171,9 @@ body {
 
 h1 {
     color: black;
-    font-weight: 600;
-    font-size: 30px;
+    margin: 10px;
+    font-weight: 700;
+    font-size: 40px;
 }
 
 /*FORM STYLE*/
@@ -221,39 +209,36 @@ h1 {
 }
 
 #summary {
-<<<<<<< Updated upstream
-=======
-    width: 100%;
->>>>>>> Stashed changes
     flex-shrink: 0;
     border-radius: 6px;
     border: 1px solid #000;
     background: #6c6c6c4d;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
 }
 
 #description {
-<<<<<<< Updated upstream
-=======
-    width: 100%;
->>>>>>> Stashed changes
     flex-shrink: 0;
     border-radius: 6px;
     border: 1px solid #000;
     background: #6c6c6c4d;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
 }
 
 #rsummary {
-<<<<<<< Updated upstream
-=======
-    width: 100%;
->>>>>>> Stashed changes
     flex-shrink: 0;
     border-radius: 6px;
     border: 1px solid #000;
     background: #6c6c6c4d;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
 }
 
 #submit {
@@ -281,6 +266,7 @@ h1 {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     padding: 3px;
     margin: 7px;
+    margin-bottom: -4%;
     float: right;
 }
 
@@ -288,49 +274,12 @@ h1 {
     background-color: #ada39f;
 }
 
-<<<<<<< Updated upstream
 /*Element selector*/
 form {
-=======
-#personForm {
-    width: 451px;
-    height: 200px;
-    margin: auto;
-    margin-top: 40px;
-    padding: 20px;
-    border-radius: 34px;
-    border: 2px solid black;
-    background: #d9d9d9;
-    color: #000;
-    font-family: Rubik;
-    font-size: 19px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-}
-
-#projectForm {
-    width: 451px;
-    height: 150px;
-    margin: auto;
-    margin-top: 40px;
-    padding: 20px;
-    border-radius: 34px;
-    border: 2px solid black;
-    background: #d9d9d9;
-    color: #000;
-    font-family: Rubik;
-    font-size: 19px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-}
-
-#ticket {
->>>>>>> Stashed changes
     width: 451px;
     height: 600px;
     margin: auto;
+    margin-top: 40px;
     padding: 20px;
     border-radius: 34px;
     border: 2px solid black;
@@ -343,30 +292,21 @@ form {
     line-height: normal;
 }
 
-<<<<<<< Updated upstream
 input[type=text] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-=======
-/*Element selector*/
-input:focus {
-    outline: 1px solid #2F312F;
->>>>>>> Stashed changes
 }
 
 label {
     margin: 5px;
 }
 
-<<<<<<< Updated upstream
 input:focus {
     outline: 1px solid #2F312F;
 }
 
-=======
->>>>>>> Stashed changes
 select {
     padding: 6px 10px;
     border: none;
