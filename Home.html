@@ -14,12 +14,12 @@
     <div class="header">
         <h1 id="head">Bug Tracker</h1>
         <button id="newTic" onclick="openForm()">Create new Ticket</button>
-        <button id="newPer" onclick = "createPeople()">Add a Person</button>
-        <button id="newPro" onclick = "createProjects()">Create a Project</button>
+        <button id="newPer" onclick="openFormper()">Add a Person</button>
+        <button id="newPro" onclick="openFormpro()">Create a Project</button>
     </div>
 
-    <!--FORM-->
-    <div id="Form" class="form-popup">
+    <!--TICKET FORM-->
+    <div id="form" class="form-popup">
         <form id="ticket">
             <legend id="title">Ticket</legend>
             <label class="label">Summary</label><br>
@@ -29,7 +29,7 @@
             <input type="text" id="description" required><br>
 
             <label class="label">Project</label>
-            <input type="" id="project" class="input" required><br>
+            <input type="text" id="project" class="input" required><br>
 
             <label class="label">Discovered by</label>
             <input list="people" class="input" id="discPerson" required>
@@ -82,46 +82,45 @@
             <button type="submit" value="submit" id="submit">Submit</button>
         </form>
     </div>
-    <!--FORM END-->
   
-    <!--People form Start-->
-      <div id="PersonForm" class="form-popup">
-        <form id="people">
+    <!--PEOPLE FORM-->
+    <div id="personForm" class="form-popup">
+        <form >
             <legend id="title">Person</legend>
-            <label class="label">First Name</label><br>
-            <input type="text" id="fName" maxlength="50" required><br>
+            <label class="label">First Name</label>
+            <input type="text" id="fName" class="input" required><br>
 
-            <label class="label">Last Name</label><br>
-            <input type="text" id="lName" required><br>
+            <label class="label">Last Name</label>
+            <input type="text" id="lName" class="input" required><br>
 
             <label class="label">E-mail</label>
-            <input type="" id="email" class="input" required><br>
+            <input type="email" id="email" class="input" required><br>
 
             <label class="label">Username</label>
-            <input list="people" class="input" id="uName" required>
+            <input list="text" class="input" id="uName" required><br>
           
             <button type="reset" value="cancel" id="cancel" onclick="closeFormper()">Cancel</button>
             <button type="submit" value="submit" id="submit">Submit</button>
         </form>
+    </div>
 
-    <div id="ProjectForm" class="form-popup">
-       
-        <form id="project">
+    <!--PROJECT FORM-->
+    <div id="projectForm" class="form-popup">
+        <form>
             <legend id="title">Project</legend>
-            <label class="label">Project Name</label><br>
-            <input type="text" id="proName" maxlength="50" required><br>
+            <label class="label">Project Name</label>
+            <input type="text" id="proName" class="input" required><br>
 
-            <label class="label">Project ID</label><br>
-            <input type="text" id="proID" required><br>
+            <label class="label">Project ID</label>
+            <input type="text" id="proID" class="input" required><br>
 
             <button type="reset" value="cancel" id="cancel" onclick="closeFormpro()">Cancel</button>
             <button type="submit" value="submit" id="submit">Submit</button>
         </form>
-
     </div>
     <!--People END-->
 
-    <!--STATUS STUFF-->
+    <!--STATUS DIVS-->
     <div class="form-pop" id="statusOpen" style="overflow-y: auto">
         <h1 id="open">Open</h1>
     </div>
