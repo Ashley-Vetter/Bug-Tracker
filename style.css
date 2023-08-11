@@ -237,11 +237,9 @@ h1{
     background-color: #ada39f;
 }
 
-
-
 #personForm{
     width: 451px;
-    height: 600px;
+    height: 400px;
     margin: auto;
     margin-top: 40px;
     padding: 20px;
@@ -258,7 +256,7 @@ h1{
 
 #projectForm{
     width: 451px;
-    height: 600px;
+    height: 200px;
     margin: auto;
     margin-top: 40px;
     padding: 20px;

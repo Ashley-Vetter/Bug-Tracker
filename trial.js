@@ -136,14 +136,14 @@ function openForm() {
     document.getElementById("statusOpen").style.display = "none";
     document.getElementById("statusResolved").style.display = "none";
     document.getElementById("statusOverdue").style.display = "none";
-}
+};
 //Close popup form
 function closeForm() {
     document.getElementById("form").style.display = "none";
     document.getElementById("statusOpen").style.display = "block";
     document.getElementById("statusResolved").style.display = "block";
     document.getElementById("statusOverdue").style.display = "block";
-}
+};
 
 //Person Form PopUp
 function openFormper() {
@@ -151,7 +151,7 @@ function openFormper() {
     document.getElementById("statusOpen").style.display = "none";
     document.getElementById("statusResolved").style.display = "none";
     document.getElementById("statusOverdue").style.display = "none";
-}
+};
 
 //Close prerson popup form
 function closeFormper() {
@@ -159,7 +159,7 @@ function closeFormper() {
     document.getElementById("statusOpen").style.display = "block";
     document.getElementById("statusResolved").style.display = "block";
     document.getElementById("statusOverdue").style.display = "block";
-}
+};
 
 //Project Form PopUp
 function openFormpro() {
@@ -168,7 +168,6 @@ function openFormpro() {
     document.getElementById("statusResolved").style.display = "none";
     document.getElementById("statusOverdue").style.display = "none";
 }
-
 //Close project popup form
 function closeFormpro() {
     document.getElementById("projectForm").style.display = "none";
