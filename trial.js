@@ -1,5 +1,7 @@
 const issueArr = [];
 const defPerson = ["Ashley V.", "Chandri B.", "Kelo L.", "Peter S."];
+const peopleArr = [];
+const projectArr = [];
 
 document.addEventListener('DOMContentLoaded', function () {
     // Load existing data from localStorage or initiaalise an empty array
@@ -27,30 +29,35 @@ document.addEventListener('DOMContentLoaded', function () {
                 </select>
                 <p id="prio" class="${issue.issuePriority}">${issue.issuePriority}</p>
                 <p id="assign">${issue.personAssigned}</p>
-                
             `;
-
-            const prio = card.querySelector('#prio'); //Select the priority element within the card
-
-            // Set background colour based on issue priority
-            if (issue.issuePriority === 'Low') {
+            
+            const prio = card.querySelector('#prio'); // Select the priority element within the card
+            
+            // Set background color based on issue priority
+            if (issue.issuePriority === "Low") {
                 prio.style.backgroundColor = 'lightgreen';
-            } else if (issue.issuePriority === 'Medium') {
+            }
+            else if (issue.issuePriority === "Medium") {
                 prio.style.backgroundColor = 'lightsalmon';
-            } else if (issue.issuePriority === 'High') {
+            }
+            else if (issue.issuePriority === "High") {
                 prio.style.backgroundColor = 'lightcoral';
             };
 
             // Places issue in relevant container. (Open, Resolved and Overdue)
-            // hard code values to prevent open being default
             const statusValue = issue.statusOfIssue;
-            if (statusValue === 'open') {
+            if(statusValue === 'open'){
                 statusOpen.appendChild(card);
-            } else if (statusValue === 'resolved') {
+            }else if(statusValue === 'resolved'){
                 statusResolved.appendChild(card);
-            } else if (statusValue === 'overdue') {
+            } else if(statusValue === 'overdue'){
                 statusOverdue.appendChild(card);
             }
+
+            // Add a click event listener to the card
+            card.addEventListener('click', () => {
+                openForm(); // Display the form
+            });
         });
     }
 
@@ -76,19 +83,51 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('added', { issueArr });     // Check if array is updated
     }
 
+    //Create new people
+    const createPeople = () => {
+        let newPerson = new people(     //Calla the people constructor
+            document.getElementById('fName').value,
+            document.getElementById('lName').value,
+            document.getElementById('email').value,
+            document.getElementById('uName').value
+        );
+        peopleArr.push(newPerson);      //Push the new person to the people array
+        storeData(peopleArr);       //Call the storeData function
+        document.forms[0].reset();      //clears the form
+    }
+
+    //create new projects
+    const createProjects = () => {      //calls the projects constructor
+        let newProject = new projects(
+            document.getElementById('proName'),
+            document.getElementById('proID')
+        );
+
+        projectArr.push(newProject);        //pushes the new project to the projects array
+        storeData(projectArr);      //calls the storeData function
+        document.forms[0].reset();      //clears the form
+    }
+
     // Storing form data
     function storeData(data) {
-        localStorage.setItem('issueData', JSON.stringify(data));        // Store the issueArr in LocalStorage
+        localStorage.setItem('issueData', JSON.stringify(data));      // Store the issueArr in LocalStorage
         console.log('stored', { data });
         window.location.href = 'Home.html';
     }
 
     // Event listener for the form submission
-    const submitButton = document.getElementById('submit');
-    submitButton.addEventListener('click', function (e) {
-        e.preventDefault();     // Prevent form submission
-        createTicket();     // Call the createTicket function
+        const submitButton = document.getElementById('submit');
+        submitButton.addEventListener('click', function (e) {
+            e.preventDefault();     // Prevent form submission
+            createTicket();     // Call the createTicket function
     });
+
+    // Create the edit form for each card
+        const editForm = document.createElement('form');
+        editForm.classList.add('edit-form');
+        editForm.style.display = 'none'; // Initially hide the form
+        editForm.innerHTML = ``;
+        card.appendChild(editForm);
 });
 
 //Form Popup
@@ -98,7 +137,7 @@ function openForm() {
     document.getElementById("statusResolved").style.display = "none";
     document.getElementById("statusOverdue").style.display = "none";
 }
-
+//Close popup form
 function closeForm() {
     document.getElementById("Form").style.display = "none";
     document.getElementById("statusOpen").style.display = "block";
@@ -123,21 +162,17 @@ function Issue(summary, description, project, personDiscoveredBy, discDate, stat
 
 //Contructor function for a person(?)
 
-class people {
-    constructor(fName, lName, email, uName) {
+function people (fName, lName, email, uName) {
         this.name = fName;
         this.surname = lName;
         this.email = email;
         this.useName = uName;
-    }
 }
 
 //Contructor function for a project(?)
-class projects {
-    constructor(proName, proID) {
+function projects (proName, proID) {
         this.name = proName;
         this.id = proID;
-    }
 }
 function openFormper() {
     document.getElementById("PersonForm").style.display = "block";
@@ -169,7 +204,7 @@ function closeFormpro() {
 }
 
 /*
-    Creating people
+    Creating people 
     Assigning if possible
     Function to auto add date to target date based on priority level
     Check login page, remove unneeded stuff --K working

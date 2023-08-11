@@ -8,11 +8,12 @@
 }
 
 .ticket{
-    width: 31%;
-    height: auto;
-    margin: 7px;
-    padding: 2px;
     display: inline-block;
+    position: relative;
+    width: 25%;
+    height: auto;
+    margin: 8px;
+    padding: 5px;
     background-color: #d9d9d9;
     border-radius: 10px;
     border: 1px solid black;
@@ -35,6 +36,8 @@
     text-align: center;
     font-size: 40px;
     font-family: 'Times New Roman', Times, serif;
+    margin: 10px;
+    padding: 6px;
 }
 
 #newTic{
@@ -42,14 +45,13 @@
     padding: 8px;
     margin: 5px;
     float: right;
-    bottom: 70%;
+    bottom: 60%;
     right: 2%;
     position: relative;
     background-color: #94a8ae;
     border: 2px solid #94a8ae;
     box-shadow: 1px black inset;
-}
-#newTic:hover{
+}#newTic:hover{
     background-color: #819398;
     border: 2px solid #819398;
 }
@@ -59,14 +61,13 @@
     padding: 8px;
     margin: 5px;
     float: right;
-    bottom: 70%;
+    bottom: 60%;
     right: 2%;
     position: relative;
     background-color: #94a8ae;
     border: 2px solid #94a8ae;
     box-shadow: 1px black inset;
-}
-#newPer:hover{
+}#newPer:hover{
     background-color: #819398;
     border: 2px solid #819398;
 }
@@ -76,20 +77,19 @@
     padding: 8px;
     margin: 5px;
     float: right;
-    bottom: 70%;
+    bottom: 60%;
     right: 2%;
     position: relative;
     background-color: #94a8ae;
     border: 2px solid #94a8ae;
     box-shadow: 1px black inset;
-}
-#newPro:hover{
+}#newPro:hover{
     background-color: #819398;
     border: 2px solid #819398;
 }
 
 #statusOpen{
-    background-color:rgba(112, 128, 144, 0.757);
+    background-color:rgba(174, 174, 175, 0.757);
     border: 1px solid black;
     width: 97%;
     height: 250px;
@@ -98,7 +98,7 @@
 }
 
 #statusResolved{
-    background-color: rgba(112, 128, 144, 0.757);
+    background-color:rgba(174, 174, 175, 0.757);
     border: 1px solid black;
     width: 97%;
     height: 250px;
@@ -107,7 +107,7 @@
 }
 
 #statusOverdue{
-    background-color: rgba(112, 128, 144, 0.757);
+    background-color:rgba(174, 174, 175, 0.757);
     border: 1px solid black;
     width: 97%;
     height: 250px;
@@ -125,21 +125,9 @@
     font-size: medium;
     padding: 8px;
     margin: 5px;
-    background-color: lightgray;
+    background-color: #94a8ae;
     border-radius: 10px;
     float: left;
-}
-
-#prio{
-    display: inline;
-    font-size: medium;
-    width: 50px;
-    height: 20px;
-    padding: 8px;
-    margin: 5px;
-    background-color: grey;
-    border-radius: 10px;
-    float: inline-start;
 }
 
 #assign{
@@ -160,8 +148,9 @@ body{
 
 h1{
     color: black;
-    font-weight: 600;
-    font-size: 30px;
+    margin: 10px;
+    font-weight: 700;
+    font-size: 40px;
 }
 
 /*FORM STYLE*/
@@ -230,9 +219,7 @@ h1{
     padding: 3px;
     margin: 7px;
     float: right;
-}
-
-#submit:hover{
+}#submit:hover{
     background: #064469;
 }
 
@@ -246,9 +233,7 @@ h1{
     padding: 3px;
     margin: 7px;
     float: right;
-}
-
-#cancel:hover{
+}#cancel:hover{
     background-color: #ada39f;
 }
 
@@ -257,6 +242,7 @@ form{
     width: 451px;
     height: 600px;
     margin: auto;
+    margin-top: 40px;
     padding: 20px;
     border-radius: 34px;
     border: 2px solid black;
@@ -274,14 +260,12 @@ input[type=text] {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
+}input:focus{
+    outline:1px solid #2F312F;
 }
 
 label{
     margin: 5px;
-}
-
-input:focus{
-    outline:1px solid #2F312F;
 }
 
 select{
@@ -290,6 +274,3 @@ select{
     border-radius: 4px;
     background-color: #D0D7E1;
 }
-
-/*ChatGPT Bullshit*/
-
