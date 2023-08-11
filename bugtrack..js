@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p id="prio" class="${issue.issuePriority}">${issue.issuePriority}</p>
                 <p id="assign">${issue.personAssigned}</p>
             `;
-            
+
             const prio = card.querySelector('#prio'); // Select the priority element within the card
-            
+
             // Set background color based on issue priority
             if (issue.issuePriority === "Low") {
                 prio.style.backgroundColor = 'lightgreen';
@@ -44,11 +44,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Places issue in relevant container. (Open, Resolved and Overdue)
             const statusValue = issue.statusOfIssue;
-            if(statusValue === 'open'){
+            if (statusValue === 'open') {
                 statusOpen.appendChild(card);
-            }else if(statusValue === 'resolved'){
+            } else if (statusValue === 'resolved') {
                 statusResolved.appendChild(card);
-            } else if(statusValue === 'overdue'){
+            } else if (statusValue === 'overdue') {
                 statusOverdue.appendChild(card);
             }
 
@@ -301,14 +301,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Event listener for the form submission
-        const submitButton = document.getElementById('submit');
-        submitButton.addEventListener('click', function (e) {
-            e.preventDefault();     // Prevent form submission
-            createTicket();     // Call the createTicket function
+    const submitButton = document.getElementById('submit');
+    submitButton.addEventListener('click', function (e) {
+        e.preventDefault();     // Prevent form submission
+        createTicket();     // Call the createTicket function
     });
 
     // Create the edit form for each card
-    function editForm(issue){
+    function editForm(issue) {
         document.getElementById("form").style.display = "block";
         document.getElementById("personForm").style.display = "none";
         document.getElementById("projectForm").style.display = "none";
@@ -331,26 +331,26 @@ document.addEventListener('DOMContentLoaded', function () {
         // Assuming you have a button with an id 'updateIssue' for updating the issue
         const updateButton = document.getElementById('updateIssue');
         updateButton.addEventListener('click', function () {
-        // Update issue status based on user input
-        const newStatus = document.getElementById('status').value;
-        if (issue.statusOfIssue !== newStatus) {
-            // If the status has changed, remove the card
-            const cardToRemove = document.querySelector(`#ticketContainer .ticket #sum[textContent="${issue.summary}"]`).parentNode;
-            cardToRemove.remove();
-            
-            // Remove the issue from issueArr
-            const issueIndex = issueArr.findIndex(existingIssue => existingIssue.summary === issue.summary);
-            if (issueIndex !== -1) {
-                issueArr.splice(issueIndex, 1);
+            // Update issue status based on user input
+            const newStatus = document.getElementById('status').value;
+            if (issue.statusOfIssue !== newStatus) {
+                // If the status has changed, remove the card
+                const cardToRemove = document.querySelector(`#ticketContainer .ticket #sum[textContent="${issue.summary}"]`).parentNode;
+                cardToRemove.remove();
+
+                // Remove the issue from issueArr
+                const issueIndex = issueArr.findIndex(existingIssue => existingIssue.summary === issue.summary);
+                if (issueIndex !== -1) {
+                    issueArr.splice(issueIndex, 1);
+                }
+
+                // Store updated issueArr in localStorage
+                storeData(issueArr);
             }
-            
-            // Store updated issueArr in localStorage
-            storeData(issueArr);
-        }
-        
-        // Close the form after updating
-        document.getElementById("form").style.display = "none";
-    });
+
+            // Close the form after updating
+            document.getElementById("form").style.display = "none";
+        });
     }
 });
 
@@ -428,15 +428,15 @@ function Issue(summary, description, project, personDiscoveredBy, discDate, stat
 }
 
 //Contructor function for a person
-function people (fName, lName, email, uName) {
-        this.name = fName;
-        this.surname = lName;
-        this.email = email;
-        this.useName = uName;
+function people(fName, lName, email, uName) {
+    this.name = fName;
+    this.surname = lName;
+    this.email = email;
+    this.useName = uName;
 }
 
 //Contructor function for a project
-function projects (proName, proID) {
-        this.name = proName;
-        this.id = proID;
+function projects(proName, proID) {
+    this.name = proName;
+    this.id = proID;
 }
