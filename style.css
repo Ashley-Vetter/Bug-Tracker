@@ -8,11 +8,12 @@
 }
 
 .ticket {
-    width: 31%;
-    height: auto;
-    margin: 7px;
-    padding: 2px;
     display: inline-block;
+    position: relative;
+    width: 25%;
+    height: auto;
+    margin: 8px;
+    padding: 5px;
     background-color: #d9d9d9;
     border-radius: 10px;
     border: 1px solid black;
@@ -35,6 +36,8 @@
     text-align: center;
     font-size: 40px;
     font-family: 'Times New Roman', Times, serif;
+    margin: 10px;
+    padding: 6px;
 }
 
 #newTic {
@@ -42,15 +45,13 @@
     padding: 8px;
     margin: 5px;
     float: right;
-    bottom: 70%;
+    bottom: 60%;
     right: 2%;
     position: relative;
     background-color: #94a8ae;
     border: 2px solid #94a8ae;
     box-shadow: 1px black inset;
-}
-
-#newTic:hover {
+}#newTic:hover{
     background-color: #819398;
     border: 2px solid #819398;
 }
@@ -60,15 +61,13 @@
     padding: 8px;
     margin: 5px;
     float: right;
-    bottom: 70%;
+    bottom: 60%;
     right: 2%;
     position: relative;
     background-color: #94a8ae;
     border: 2px solid #94a8ae;
     box-shadow: 1px black inset;
-}
-
-#newPer:hover {
+}#newPer:hover{
     background-color: #819398;
     border: 2px solid #819398;
 }
@@ -78,21 +77,19 @@
     padding: 8px;
     margin: 5px;
     float: right;
-    bottom: 70%;
+    bottom: 60%;
     right: 2%;
     position: relative;
     background-color: #94a8ae;
     border: 2px solid #94a8ae;
     box-shadow: 1px black inset;
-}
-
-#newPro:hover {
+}#newPro:hover{
     background-color: #819398;
     border: 2px solid #819398;
 }
 
-#statusOpen {
-    background-color: rgba(112, 128, 144, 0.757);
+#statusOpen{
+    background-color:rgba(174, 174, 175, 0.757);
     border: 1px solid black;
     width: 97%;
     height: 250px;
@@ -100,8 +97,17 @@
     padding: 8px;
 }
 
-#statusResolved {
-    background-color: rgba(112, 128, 144, 0.757);
+#statusResolved{
+    background-color:rgba(174, 174, 175, 0.757);
+    border: 1px solid black;
+    width: 97%;
+    height: 250px;
+    margin: 10px;
+    padding: 8px;
+}
+
+#statusOverdue{
+    background-color:rgba(174, 174, 175, 0.757);
     border: 1px solid black;
     width: 97%;
     height: 250px;
@@ -128,24 +134,12 @@
     font-size: medium;
     padding: 8px;
     margin: 5px;
-    background-color: lightgray;
+    background-color: #94a8ae;
     border-radius: 10px;
     float: left;
 }
 
-#prio {
-    display: inline;
-    font-size: medium;
-    width: 50px;
-    height: 20px;
-    padding: 8px;
-    margin: 5px;
-    background-color: grey;
-    border-radius: 10px;
-    float: inline-start;
-}
-
-#assign {
+#assign{
     padding: 2px;
     margin: 7px;
     text-align: center;
@@ -163,8 +157,9 @@ body {
 
 h1 {
     color: black;
-    font-weight: 600;
-    font-size: 30px;
+    margin: 10px;
+    font-weight: 700;
+    font-size: 40px;
 }
 
 /*FORM STYLE*/
@@ -199,28 +194,40 @@ h1 {
     font-size: 35px;
 }
 
-#summary {
+#summary{
+    width: 100%;
     flex-shrink: 0;
     border-radius: 6px;
     border: 1px solid #000;
     background: #6c6c6c4d;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
 }
 
-#description {
+#description{
+    width: 100%;
     flex-shrink: 0;
     border-radius: 6px;
     border: 1px solid #000;
     background: #6c6c6c4d;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
 }
 
-#rsummary {
+#rsummary{
+    width: 100%;
     flex-shrink: 0;
     border-radius: 6px;
     border: 1px solid #000;
     background: #6c6c6c4d;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
 }
 
 #submit {
@@ -233,9 +240,7 @@ h1 {
     padding: 3px;
     margin: 7px;
     float: right;
-}
-
-#submit:hover {
+}#submit:hover{
     background: #064469;
 }
 
@@ -248,18 +253,17 @@ h1 {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     padding: 3px;
     margin: 7px;
+    margin-bottom: -4%;
     float: right;
-}
-
-#cancel:hover {
+}#cancel:hover{
     background-color: #ada39f;
 }
 
-/*Element selector*/
-form {
+#personForm{
     width: 451px;
-    height: 600px;
+    height: 200px;
     margin: auto;
+    margin-top: 40px;
     padding: 20px;
     border-radius: 34px;
     border: 2px solid black;
@@ -272,22 +276,50 @@ form {
     line-height: normal;
 }
 
-input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
+#projectForm{
+    width: 451px;
+    height: 150px;
+    margin: auto;
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 34px;
+    border: 2px solid black;
+    background: #d9d9d9;
+    color: #000;
+    font-family: Rubik;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+#ticket{
+    width: 451px;
+    height: 600px;
+    margin: auto;
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 34px;
+    border: 2px solid black;
+    background: #d9d9d9;
+    color: #000;
+    font-family: Rubik;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+/*Element selector*/
+input:focus{
+    outline:1px solid #2F312F;
 }
 
 label {
     margin: 5px;
 }
 
-input:focus {
-    outline: 1px solid #2F312F;
-}
-
-select {
+select{
     padding: 6px 10px;
     border: none;
     border-radius: 4px;
