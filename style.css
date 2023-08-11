@@ -284,7 +284,6 @@ h1{
     line-height: normal;
 }
 
-/*Element selector*/
 #ticket{
     width: 451px;
     height: 600px;
@@ -301,6 +300,26 @@ h1{
     font-weight: 500;
     line-height: normal;
 }
+
+#edit-form{
+    width: 451px;
+    height: 600px;
+    margin: auto;
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 34px;
+    border: 2px solid black;
+    background: #d9d9d9;
+    color: #000;
+    font-family: Rubik;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+/*Element selector*/
+
 
 input:focus{
     outline:1px solid #2F312F;
