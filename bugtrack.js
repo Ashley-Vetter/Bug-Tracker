@@ -7,14 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const storedIssueData = localStorage.getItem('issueData');
     const issueArr = storedIssueData ? JSON.parse(storedIssueData) : [];
 
-    // Button click handlers
-    document.getElementById("newTic").addEventListener("click", openForm);
-    document.getElementById("newPer").addEventListener("click", openFormper);
-    document.getElementById("newPro").addEventListener("click", openFormpro);
-    document.getElementById("closeTicket").addEventListener("click", closeForm);
-    document.getElementById("closePeople").addEventListener("click", closeFormper);
-    document.getElementById("closeProject").addEventListener("click", closeFormpro);
-
     // Dynamic card generation 
     if (storedIssueData) {
         const issueArr = JSON.parse(storedIssueData);
@@ -81,8 +73,8 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('resDate').value,
             document.getElementById('rsummary').value
         );
-        issueArr.push(issue);       // Push new issue to issueArr
-        storeData(issueArr);        // Call the storeData function
+        issueArr.push(issue);           // Push new issue to issueArr
+        storeData(issueArr);            // Call the storeData function
         document.forms[0].reset();      // Clears the form for the next entries
         //Display purposes only
         console.log('added', { issueArr });     // Check if array is updated
@@ -97,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('uName').value
         );
         peopleArr.push(newPerson);      //Push the new person to the people array
-        storeData(peopleArr);       //Call the storeData function
+        storeData(peopleArr);           //Call the storeData function
         document.forms[0].reset();      //clears the form
     }
 
@@ -415,30 +407,6 @@ function closeFormpro() {
     document.getElementById("projectForm").style.display = "none";
     document.getElementById("personForm").style.display = "none";
     document.getElementById("form").style.display = "none";
-    document.getElementById("statusOpen").style.display = "block";
-    document.getElementById("statusResolved").style.display = "block";
-    document.getElementById("statusOverdue").style.display = "block";
-}
-function openFormper() {
-    document.getElementById("PersonForm").style.display = "block";
-    document.getElementById("statusOpen").style.display = "none";
-    document.getElementById("statusResolved").style.display = "none";
-    document.getElementById("statusOverdue").style.display = "none";
-}
-function closeFormper() {
-    document.getElementById("PersonForm").style.display = "none";
-    document.getElementById("statusOpen").style.display = "block";
-    document.getElementById("statusResolved").style.display = "block";
-    document.getElementById("statusOverdue").style.display = "block";
-}
-function openFormpro() {
-    document.getElementById("ProjectForm").style.display = "block";
-    document.getElementById("statusOpen").style.display = "none";
-    document.getElementById("statusResolved").style.display = "none";
-    document.getElementById("statusOverdue").style.display = "none";
-}
-function closeFormpro() {
-    document.getElementById("ProjectForm").style.display = "none";
     document.getElementById("statusOpen").style.display = "block";
     document.getElementById("statusResolved").style.display = "block";
     document.getElementById("statusOverdue").style.display = "block";
