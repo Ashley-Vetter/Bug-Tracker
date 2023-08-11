@@ -1,15 +1,21 @@
 const issueArr = [];
-const defPerson = ["Ashley V.", "Chandri B.", "Kelo L.", "Peter S."];
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Load existing data from localStorage or initiaalise an empty array
+    // Load existing data from localStorage or initialise an empty array
     const storedIssueData = localStorage.getItem('issueData');
     const issueArr = storedIssueData ? JSON.parse(storedIssueData) : [];
+
+    // Button click handlers
+    document.getElementById("newTic").addEventListener("click", openForm);
+    document.getElementById("newPer").addEventListener("click", openFormper);
+    document.getElementById("newPro").addEventListener("click", openFormpro);
+    document.getElementById("closeTicket").addEventListener("click", closeForm);
+    document.getElementById("closePeople").addEventListener("click", closeFormper);
+    document.getElementById("closeProject").addEventListener("click", closeFormpro);
 
     // Dynamic card generation 
     if (storedIssueData) {
         const issueArr = JSON.parse(storedIssueData);
-        const ticketContainer = document.getElementById('ticketContainer');
         const statusOpen = document.getElementById('statusOpen');
         const statusResolved = document.getElementById('statusResolved');
         const statusOverdue = document.getElementById('statusOverdue');
@@ -29,11 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p id="assign">${issue.personAssigned}</p>
                 
             `;
-
-            const prio = card.querySelector('#prio'); //Select the priority element within the card
-
-            // Set background colour based on issue priority
-            if (issue.issuePriority === 'Low') {
+            // Select the priority element within the card
+            const prio = card.querySelector('#prio');
+            // Set background color based on issue priority
+            if (issue.issuePriority === "Low") {
                 prio.style.backgroundColor = 'lightgreen';
             } else if (issue.issuePriority === 'Medium') {
                 prio.style.backgroundColor = 'lightsalmon';
@@ -53,7 +58,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
-
     // Create new ticket
     const createTicket = () => {
         let issue = new Issue(      // Calls Issue Constructor
@@ -78,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Storing form data
     function storeData(data) {
-        localStorage.setItem('issueData', JSON.stringify(data));        // Store the issueArr in LocalStorage
+        localStorage.setItem('issueData', JSON.stringify(data));    // Store the issueArr in LocalStorage
         console.log('stored', { data });
         window.location.href = 'Home.html';
     }
@@ -89,18 +93,48 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault();     // Prevent form submission
         createTicket();     // Call the createTicket function
     });
+
+    // Create the edit form for each card
+    const editForm = document.createElement('form');
+    editForm.classList.add('edit-form');
+    editForm.style.display = 'none'; // Initially hide the form
+    editForm.innerHTML = ``;
+    card.appendChild(editForm);
 });
 
-//Form Popup
+//          Form Popup Function
 function openForm() {
     document.getElementById("Form").style.display = "block";
     document.getElementById("statusOpen").style.display = "none";
     document.getElementById("statusResolved").style.display = "none";
     document.getElementById("statusOverdue").style.display = "none";
 }
-
 function closeForm() {
     document.getElementById("Form").style.display = "none";
+    document.getElementById("statusOpen").style.display = "block";
+    document.getElementById("statusResolved").style.display = "block";
+    document.getElementById("statusOverdue").style.display = "block";
+}
+function openFormper() {
+    document.getElementById("PersonForm").style.display = "block";
+    document.getElementById("statusOpen").style.display = "none";
+    document.getElementById("statusResolved").style.display = "none";
+    document.getElementById("statusOverdue").style.display = "none";
+}
+function closeFormper() {
+    document.getElementById("PersonForm").style.display = "none";
+    document.getElementById("statusOpen").style.display = "block";
+    document.getElementById("statusResolved").style.display = "block";
+    document.getElementById("statusOverdue").style.display = "block";
+}
+function openFormpro() {
+    document.getElementById("ProjectForm").style.display = "block";
+    document.getElementById("statusOpen").style.display = "none";
+    document.getElementById("statusResolved").style.display = "none";
+    document.getElementById("statusOverdue").style.display = "none";
+}
+function closeFormpro() {
+    document.getElementById("ProjectForm").style.display = "none";
     document.getElementById("statusOpen").style.display = "block";
     document.getElementById("statusResolved").style.display = "block";
     document.getElementById("statusOverdue").style.display = "block";
@@ -121,31 +155,60 @@ function Issue(summary, description, project, personDiscoveredBy, discDate, stat
     this.resolutionSummary = resolutionSummary;
 }
 
-//Contructor function for a person(?)
-
-class people {
-    constructor(fName, lName, email, uName) {
-        this.name = fName;
-        this.surname = lName;
-        this.email = email;
-        this.useName = uName;
-    }
+//Contructor function for a person
+function people(fName, lName, email, uName) {
+    this.name = fName;
+    this.surname = lName;
+    this.email = email;
+    this.useName = uName;
 }
 
-//Contructor function for a project(?)
-class projects {
-    constructor(proName, proID) {
-        this.name = proName;
-        this.id = proID;
-    }
+//Contructor function for a project
+function projects(proName, proID) {
+    this.name = proName;
+    this.id = proID;
 }
 
-/*
-    Creating people
-    Assigning if possible
-    Function to auto add date to target date based on priority level
-    Check login page, remove unneeded stuff --K working
-    Tagging of status, open,resolved,overdue --A working
-    Color changing based on priority level -- done
-    Reopen form after stored with card 
- */
+// Constructor for issue
+function Issue(summary, description, project, personDiscoveredBy, discDate, statusOfIssue, issuePriority, targetDate, personAssigned, resolutionDate, resolutionSummary) {
+    this.summary = summary;
+    this.description = description;
+    this.project = project;
+    this.personDiscoveredBy = personDiscoveredBy;
+    this.discDate = discDate;
+    this.statusOfIssue = statusOfIssue;
+    this.issuePriority = issuePriority;
+    this.targetDate = targetDate;
+    this.personAssigned = personAssigned;
+    this.resolutionDate = resolutionDate;
+    this.resolutionSummary = resolutionSummary;
+}
+
+//Contructor function for a person
+function people(fName, lName, email, uName) {
+    this.name = fName;
+    this.surname = lName;
+    this.email = email;
+    this.useName = uName;
+}
+
+//Contructor function for a project
+function projects(proName, proID) {
+    this.name = proName;
+    this.id = proID;
+}
+
+// Login
+let username = "admin";
+let password = "admin";
+let form = document.getElementById("logform");
+function handleForm(event) {
+    event.preventDefault();
+    if (document.getElementById("name").value == username && document.getElementById("pass").value == password) {
+        window.location.href = 'Home.html';
+    }
+    else {
+        document.getElementById("invalid").innerHTML = "Invalid credentials";
+    }
+}
+form.addEventListener('submit', handleForm);
