@@ -252,7 +252,7 @@ h1{
 
 #personForm{
     width: 451px;
-    height: 300px;
+    height: 200px;
     margin: auto;
     margin-top: 40px;
     padding: 20px;
@@ -284,7 +284,6 @@ h1{
     line-height: normal;
 }
 
-/*Element selector*/
 #ticket{
     width: 451px;
     height: 600px;
@@ -302,6 +301,7 @@ h1{
     line-height: normal;
 }
 
+/*Element selector*/
 input:focus{
     outline:1px solid #2F312F;
 }

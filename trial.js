@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Add a click event listener to the card
             card.addEventListener('click', () => {
-                openForm(); // Display the form
+                editForm(issue); // Display the form
             });
         });
     }
@@ -122,11 +122,50 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Create the edit form for each card
-        const editForm = document.createElement('form');
-        editForm.classList.add('edit-form');
-        editForm.style.display = 'none'; // Initially hide the form
-        editForm.innerHTML = ``;
-        card.appendChild(editForm);
+    function editForm(issue){
+        document.getElementById("form").style.display = "block";
+        document.getElementById("personForm").style.display = "none";
+        document.getElementById("projectForm").style.display = "none";
+        document.getElementById("statusOpen").style.display = "none";
+        document.getElementById("statusResolved").style.display = "none";
+        document.getElementById("statusOverdue").style.display = "none";
+
+        document.getElementById('summary').value = issue.summary;
+        document.getElementById('description').value = issue.description;
+        document.getElementById('project').value = issue.project;
+        document.getElementById('discPerson').value = issue.personDiscoveredBy;
+        document.getElementById('discDate').value = issue.discDate;
+        document.getElementById('status').value = issue.statusOfIssue;
+        document.getElementById('priority').value = issue.issuePriority;
+        document.getElementById('tarDate').value = issue.targetDate;
+        document.getElementById('assigned').value = issue.personAssigned;
+        document.getElementById('resDate').value = issue.resolutionDate;
+        document.getElementById('rsummary').value = issue.resolutionSummary;
+
+        // Assuming you have a button with an id 'updateIssue' for updating the issue
+        const updateButton = document.getElementById('updateIssue');
+        updateButton.addEventListener('click', function () {
+        // Update issue status based on user input
+        const newStatus = document.getElementById('status').value;
+        if (issue.statusOfIssue !== newStatus) {
+            // If the status has changed, remove the card
+            const cardToRemove = document.querySelector(`#ticketContainer .ticket #sum[textContent="${issue.summary}"]`).parentNode;
+            cardToRemove.remove();
+            
+            // Remove the issue from issueArr
+            const issueIndex = issueArr.findIndex(existingIssue => existingIssue.summary === issue.summary);
+            if (issueIndex !== -1) {
+                issueArr.splice(issueIndex, 1);
+            }
+            
+            // Store updated issueArr in localStorage
+            storeData(issueArr);
+        }
+        
+        // Close the form after updating
+        document.getElementById("form").style.display = "none";
+    });
+    }
 });
 
 //Ticket form Popup
