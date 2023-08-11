@@ -3,14 +3,21 @@ const peopleArr = [];
 const projectArr = [];
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Load existing data from localStorage or initiaalise an empty array
+    // Load existing data from localStorage or initialise an empty array
     const storedIssueData = localStorage.getItem('issueData');
     const issueArr = storedIssueData ? JSON.parse(storedIssueData) : [];
+
+    // Button click handlers
+    document.getElementById("newTic").addEventListener("click", openForm);
+    document.getElementById("newPer").addEventListener("click", openFormper);
+    document.getElementById("newPro").addEventListener("click", openFormpro);
+    document.getElementById("closeTicket").addEventListener("click", closeForm);
+    document.getElementById("closePeople").addEventListener("click", closeFormper);
+    document.getElementById("closeProject").addEventListener("click", closeFormpro);
 
     // Dynamic card generation 
     if (storedIssueData) {
         const issueArr = JSON.parse(storedIssueData);
-        const ticketContainer = document.getElementById('ticketContainer');
         const statusOpen = document.getElementById('statusOpen');
         const statusResolved = document.getElementById('statusResolved');
         const statusOverdue = document.getElementById('statusOverdue');
@@ -59,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
-
     // Create new ticket
     const createTicket = () => {
         let issue = new Issue(      // Calls Issue Constructor
@@ -109,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Storing form data
     function storeData(data) {
-        localStorage.setItem('issueData', JSON.stringify(data));      // Store the issueArr in LocalStorage
+        localStorage.setItem('issueData', JSON.stringify(data));    // Store the issueArr in LocalStorage
         console.log('stored', { data });
         window.location.href = 'Home.html';
     }
@@ -221,6 +227,30 @@ function closeFormpro() {
     document.getElementById("projectForm").style.display = "none";
     document.getElementById("personForm").style.display = "none";
     document.getElementById("form").style.display = "none";
+    document.getElementById("statusOpen").style.display = "block";
+    document.getElementById("statusResolved").style.display = "block";
+    document.getElementById("statusOverdue").style.display = "block";
+}
+function openFormper() {
+    document.getElementById("PersonForm").style.display = "block";
+    document.getElementById("statusOpen").style.display = "none";
+    document.getElementById("statusResolved").style.display = "none";
+    document.getElementById("statusOverdue").style.display = "none";
+}
+function closeFormper() {
+    document.getElementById("PersonForm").style.display = "none";
+    document.getElementById("statusOpen").style.display = "block";
+    document.getElementById("statusResolved").style.display = "block";
+    document.getElementById("statusOverdue").style.display = "block";
+}
+function openFormpro() {
+    document.getElementById("ProjectForm").style.display = "block";
+    document.getElementById("statusOpen").style.display = "none";
+    document.getElementById("statusResolved").style.display = "none";
+    document.getElementById("statusOverdue").style.display = "none";
+}
+function closeFormpro() {
+    document.getElementById("ProjectForm").style.display = "none";
     document.getElementById("statusOpen").style.display = "block";
     document.getElementById("statusResolved").style.display = "block";
     document.getElementById("statusOverdue").style.display = "block";

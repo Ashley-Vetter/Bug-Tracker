@@ -1,11 +1,11 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: monospace;
 }
 
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +14,7 @@ body{
     background: radial-gradient(circle, rgb(60, 60, 60) 0%, rgb(22, 22, 73) 100%);
 }
 
-.wrapper{
+.wrapper {
     position: relative;
     width: 420px;
     background: #011a23;
@@ -24,15 +24,14 @@ body{
     box-shadow: 0px 10px #0c0c0c;
 }
 
-.wrapper h1{
+.wrapper h1 {
     font-size: 36px;
     text-align: center;
 }
 
-.wrapper .input-box{
+.wrapper .input-box {
     width: 100%;
     height: 50px;
- 
     margin: 30px 0;
 }
 
@@ -52,9 +51,8 @@ body{
     text-align: center;
 }
 
-.input-box input::placeholder{
+.input-box input::placeholder {
     color: #fff;
-  
 }
 
 .input-box i {
@@ -66,7 +64,7 @@ body{
 }
 
 .input-box i {
-    position:absolute;
+    position: absolute;
     right: 20px;
     top: 58%;
     transform: translate(-50%);
@@ -85,18 +83,15 @@ body{
     font-size: 16px;
     color: #333;
     font-weight: 600;
-
 }
 
 .wrapper .register-link {
-
     font-size: 14.5px;
     text-align: center;
     margin: 20px 0 15px;
-
 }
 
-.outside-box{
+.outside-box {
     position: absolute;
     display: flex;
     width: 700px;
@@ -108,27 +103,23 @@ body{
     
 }
 
-#lock{
-   
+#lock {
     border-radius: 40px;
     font-size: 16px;
     color: #fff;
-   
     top: 210px;
     left: 350px;
 }
-#user{
-  
+
+#user {
     border-radius: 40px;
     font-size: 16px;
     color: #fff;
-    
     top: 135px;
     left: 350px;
-
 }
-.inside-outside-box{
-    
+
+.inside-outside-box {
     width: 205px;
     height: 30%;
     background: rgba(13, 37, 60, 0.704);
@@ -139,7 +130,8 @@ body{
    
    
 }
-#lol{
+
+#lol {
     text-align: center;
 }
 #login:hover{
