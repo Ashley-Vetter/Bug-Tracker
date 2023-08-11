@@ -14,8 +14,8 @@
     <div class="header">
         <h1 id="head">Bug Tracker</h1>
         <button id="newTic" onclick="openForm()">Create new Ticket</button>
-        <button id="newPer" onclick = "createPeople()">Add a Person</button>
-        <button id="newPro" onclick = "createProjects()">Create a Project</button>
+        <button id="newPer" onclick="openFormper()">Add a Person</button>
+        <button id="newPro" onclick="openFormpro()">Create a Project</button>
     </div>
 
     <!--FORM-->
@@ -34,10 +34,10 @@
             <label class="label">Discovered by</label>
             <input list="people" class="input" id="discPerson" required>
             <datalist id="people">
-                <option value="p1">Person 1</option>
-                <option value="p2">Person 2</option>
-                <option value="p3">Person 3</option>
-                <option value="p4">Person 4</option>
+                <option value="Ashley V.">Ashley V.</option>
+                <option value="Chandri B.">Chandri B.</option>
+                <option value="Kelo L.">Kelo L.</option>
+                <option value="Peter S.">Peter S.</option>
             </datalist><br>
 
             <label class="label">Date discovered</label>
@@ -65,10 +65,10 @@
             <label class="label">Assigned to</label>
             <input list="people" class="input" id="assigned" required>
             <datalist id="people">
-                <option value="p1">Person 1</option>
-                <option value="p2">Person 2</option>
-                <option value="p3">Person 3</option>
-                <option value="p4">Person 4</option>
+                <option value="Ashley V.">Ashley V.</option>
+                <option value="Chandri B.">Chandri B.</option>
+                <option value="Kelo L.">Kelo L.</option>
+                <option value="Peter S.">Peter S.</option>
             </datalist><br>
 
             <label class="label">Resolution Date</label>
@@ -101,7 +101,7 @@
             <input list="people" class="input" id="uName" required>
           
             <button type="reset" value="cancel" id="cancel" onclick="closeFormper()">Cancel</button>
-            <button type="submit" value="submit" id="submit">Submit</button>
+            <button type="submit" value="submit" id="submitPer">Submit</button>
         </form>
 
     <div id="ProjectForm" class="form-popup">
@@ -115,7 +115,7 @@
             <input type="text" id="proID" required><br>
 
             <button type="reset" value="cancel" id="cancel" onclick="closeFormpro()">Cancel</button>
-            <button type="submit" value="submit" id="submit">Submit</button>
+            <button type="submit" value="submit" id="submitPro">Submit</button>
         </form>
 
     </div>

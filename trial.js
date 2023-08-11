@@ -122,6 +122,18 @@ document.addEventListener('DOMContentLoaded', function () {
             createTicket();     // Call the createTicket function
     });
 
+    const submitButtonPer = document.getElementById('submitPer');
+        submitButtonPer.addEventListener('click', function (e) {
+            e.preventDefault();     // Prevent form submission
+            createPeople();
+    });
+
+    const submitButtonPro = document.getElementById('submitPro');
+        submitButtonPro.addEventListener('click', function (e) {
+            e.preventDefault();     // Prevent form submission
+            createProjects();
+    });
+
     // Create the edit form for each card
         const editForm = document.createElement('form');
         editForm.classList.add('edit-form');
@@ -143,6 +155,22 @@ function closeForm() {
     document.getElementById("statusOpen").style.display = "block";
     document.getElementById("statusResolved").style.display = "block";
     document.getElementById("statusOverdue").style.display = "block";
+}
+
+function openFormper() {
+    document.getElementById("PersonForm").style.display = "block";
+}
+
+function closeFormper() {
+    document.getElementById("PersonForm").style.display = "none";
+}
+
+function openFormpro() {
+    document.getElementById("ProjectForm").style.display = "block";
+}
+
+function closeFormpro() {
+    document.getElementById("ProjectForm").style.display = "none";
 }
 
 // Constructor for issue
@@ -173,34 +201,6 @@ function people (fName, lName, email, uName) {
 function projects (proName, proID) {
         this.name = proName;
         this.id = proID;
-}
-function openFormper() {
-    document.getElementById("PersonForm").style.display = "block";
-    document.getElementById("statusOpen").style.display = "none";
-    document.getElementById("statusResolved").style.display = "none";
-    document.getElementById("statusOverdue").style.display = "none";
-
- 
-}
-
-function openFormpro() {
-    document.getElementById("ProjectForm").style.display = "block";
-    document.getElementById("statusOpen").style.display = "none";
-    document.getElementById("statusResolved").style.display = "none";
-    document.getElementById("statusOverdue").style.display = "none";
-}
-
-function closeFormper() {
-    document.getElementById("PersonForm").style.display = "none";
-    document.getElementById("statusOpen").style.display = "block";
-    document.getElementById("statusResolved").style.display = "block";
-    document.getElementById("statusOverdue").style.display = "block";
-}
-function closeFormpro() {
-    document.getElementById("ProjectForm").style.display = "none";
-    document.getElementById("statusOpen").style.display = "block";
-    document.getElementById("statusResolved").style.display = "block";
-    document.getElementById("statusOverdue").style.display = "block";
 }
 
 /*
