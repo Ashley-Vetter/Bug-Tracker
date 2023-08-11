@@ -186,27 +186,39 @@ h1{
 }
 
 #summary{
+    width: 100%;
     flex-shrink: 0;
     border-radius: 6px;
     border: 1px solid #000;
     background: #6c6c6c4d;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
 }
 
 #description{
+    width: 100%;
     flex-shrink: 0;
     border-radius: 6px;
     border: 1px solid #000;
     background: #6c6c6c4d;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
 }
 
 #rsummary{
+    width: 100%;
     flex-shrink: 0;
     border-radius: 6px;
     border: 1px solid #000;
     background: #6c6c6c4d;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
 }
 
 #submit{
@@ -232,6 +244,7 @@ h1{
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     padding: 3px;
     margin: 7px;
+    margin-bottom: -4%;
     float: right;
 }#cancel:hover{
     background-color: #ada39f;
@@ -239,7 +252,7 @@ h1{
 
 #personForm{
     width: 451px;
-    height: 400px;
+    height: 300px;
     margin: auto;
     margin-top: 40px;
     padding: 20px;
@@ -256,7 +269,7 @@ h1{
 
 #projectForm{
     width: 451px;
-    height: 200px;
+    height: 150px;
     margin: auto;
     margin-top: 40px;
     padding: 20px;
@@ -272,7 +285,7 @@ h1{
 }
 
 /*Element selector*/
-form{
+#ticket{
     width: 451px;
     height: 600px;
     margin: auto;
@@ -289,12 +302,7 @@ form{
     line-height: normal;
 }
 
-input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-}input:focus{
+input:focus{
     outline:1px solid #2F312F;
 }
 

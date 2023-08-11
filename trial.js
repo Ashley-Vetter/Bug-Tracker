@@ -1,5 +1,4 @@
 const issueArr = [];
-const defPerson = ["Ashley V.", "Chandri B.", "Kelo L.", "Peter S."];
 const peopleArr = [];
 const projectArr = [];
 
@@ -133,6 +132,8 @@ document.addEventListener('DOMContentLoaded', function () {
 //Ticket form Popup
 function openForm() {
     document.getElementById("form").style.display = "block";
+    document.getElementById("personForm").style.display = "none";
+    document.getElementById("projectForm").style.display = "none";
     document.getElementById("statusOpen").style.display = "none";
     document.getElementById("statusResolved").style.display = "none";
     document.getElementById("statusOverdue").style.display = "none";
@@ -140,6 +141,8 @@ function openForm() {
 //Close popup form
 function closeForm() {
     document.getElementById("form").style.display = "none";
+    document.getElementById("personForm").style.display = "none";
+    document.getElementById("projectForm").style.display = "none";
     document.getElementById("statusOpen").style.display = "block";
     document.getElementById("statusResolved").style.display = "block";
     document.getElementById("statusOverdue").style.display = "block";
@@ -148,6 +151,8 @@ function closeForm() {
 //Person Form PopUp
 function openFormper() {
     document.getElementById("personForm").style.display = "block";
+    document.getElementById("projectForm").style.display = "none";
+    document.getElementById("form").style.display = "none";
     document.getElementById("statusOpen").style.display = "none";
     document.getElementById("statusResolved").style.display = "none";
     document.getElementById("statusOverdue").style.display = "none";
@@ -156,6 +161,8 @@ function openFormper() {
 //Close prerson popup form
 function closeFormper() {
     document.getElementById("personForm").style.display = "none";
+    document.getElementById("projectForm").style.display = "none";
+    document.getElementById("form").style.display = "none";
     document.getElementById("statusOpen").style.display = "block";
     document.getElementById("statusResolved").style.display = "block";
     document.getElementById("statusOverdue").style.display = "block";
@@ -164,6 +171,8 @@ function closeFormper() {
 //Project Form PopUp
 function openFormpro() {
     document.getElementById("projectForm").style.display = "block";
+    document.getElementById("personForm").style.display = "none";
+    document.getElementById("form").style.display = "none";
     document.getElementById("statusOpen").style.display = "none";
     document.getElementById("statusResolved").style.display = "none";
     document.getElementById("statusOverdue").style.display = "none";
@@ -171,6 +180,8 @@ function openFormpro() {
 //Close project popup form
 function closeFormpro() {
     document.getElementById("projectForm").style.display = "none";
+    document.getElementById("personForm").style.display = "none";
+    document.getElementById("form").style.display = "none";
     document.getElementById("statusOpen").style.display = "block";
     document.getElementById("statusResolved").style.display = "block";
     document.getElementById("statusOverdue").style.display = "block";
@@ -191,8 +202,7 @@ function Issue(summary, description, project, personDiscoveredBy, discDate, stat
     this.resolutionSummary = resolutionSummary;
 }
 
-//Contructor function for a person(?)
-
+//Contructor function for a person
 function people (fName, lName, email, uName) {
         this.name = fName;
         this.surname = lName;
@@ -200,19 +210,8 @@ function people (fName, lName, email, uName) {
         this.useName = uName;
 }
 
-//Contructor function for a project(?)
+//Contructor function for a project
 function projects (proName, proID) {
         this.name = proName;
         this.id = proID;
 }
-
-
-/*
-    Creating people 
-    Assigning if possible
-    Function to auto add date to target date based on priority level
-    Check login page, remove unneeded stuff --K working
-    Tagging of status, open,resolved,overdue --A working
-    Color changing based on priority level -- done
-    Reopen form after stored with card 
- */
