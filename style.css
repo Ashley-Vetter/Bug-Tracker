@@ -32,7 +32,7 @@
 }
 
 /*IDs*/
-#head {
+#head{
     text-align: center;
     font-size: 40px;
     font-family: 'Times New Roman', Times, serif;
@@ -40,7 +40,7 @@
     padding: 6px;
 }
 
-#newTic {
+#newTic{
     border-radius: 15px;
     padding: 8px;
     margin: 5px;
@@ -72,7 +72,7 @@
     border: 2px solid #819398;
 }
 
-#newPro {
+#newPro{
     border-radius: 15px;
     padding: 8px;
     margin: 5px;
@@ -115,22 +115,13 @@
     padding: 8px;
 }
 
-#statusOverdue {
-    background-color: rgba(112, 128, 144, 0.757);
-    border: 1px solid black;
-    width: 97%;
-    height: 250px;
-    margin: 10px;
-    padding: 8px;
-}
-
-#sum {
+#sum{
     padding: 5px;
     margin: 5px;
     height: fit-content;
 }
 
-#stat {
+#stat{
     font-size: medium;
     padding: 8px;
     margin: 5px;
