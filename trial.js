@@ -107,6 +107,194 @@ document.addEventListener('DOMContentLoaded', function () {
         document.forms[0].reset();      //clears the form
     }
 
+    const sampleIssues = [
+        {
+            summary:"Update Styling",
+            description:"Update the color scheme of the website to match the new branding.",
+            project:"Project D",
+            personDiscoveredBy:"Chandri",
+            discDate:"2023-08-08",
+            statusOfIssue:"open",
+            issuePriority:"Medium",
+            targetDate:"2023-08-18",
+            personAssigned:"Peter",
+            resolutionDate:"",
+            resolutionSummary:""        
+        },
+        {
+            summary:"Fix UI Alignment",
+            description:"Alignment of elements is off in the dashboard.",
+            project:"Project A",
+            personDiscoveredBy:"Ashley",
+            discDate:"2023-08-01",
+            statusOfIssue:"open",
+            issuePriority:"Medium",
+            targetDate:"2023-08-15",
+            personAssigned:"Chandri",
+            resolutionDate:"",
+            resolutionSummary:""
+        },
+        {
+            summary:"Upgrade Server",
+            description:"Upgrade the server hardware to improve performance and scalability.",
+            project:"Project C",
+            personDiscoveredBy:"Peter",
+            discDate:"2023-08-14",
+            statusOfIssue:"open",
+            issuePriority:"High",
+            targetDate:"2023-08-30",
+            personAssigned:"Chandri",
+            resolutionDate:"",
+            resolutionSummary:""
+        },
+        {
+            summary:"Add New Feature",
+            description:"Implement the new feature to support file uploads.",
+            project:"Project C",
+            personDiscoveredBy:"Chandri",
+            discDate:"2023-08-05",
+            statusOfIssue:"resolved",
+            issuePriority:"Medium",
+            targetDate:"2023-08-20",
+            personAssigned:"Ashley",
+            resolutionDate:"2023-08-15",
+            resolutionSummary:"Implemented file upload feature successfully."
+        },
+        {
+            summary:"Add New Feature",
+            description:"Implement the new feature to support file uploads.",
+            project:"Project C",
+            personDiscoveredBy:"Peter",
+            discDate:"2023-08-05",
+            statusOfIssue:"resolved",
+            issuePriority:"Medium",
+            targetDate:"2023-08-11",
+            personAssigned:"Kelo",
+            resolutionDate:"2023-08-15",
+            resolutionSummary:"Implemented file upload feature successfully.",
+        },
+        {
+            summary: "Database Connection Error",
+            description: "Unable to establish connection with the database server.",
+            project: "Project B",
+            personDiscoveredBy: "Ashley",
+            discDate: "2023-07-20",
+            statusOfIssue: "open",
+            issuePriority: "High",
+            targetDate: "2023-08-10",
+            personAssigned: "Chandri",
+            resolutionDate: "",
+            resolutionSummary: ""
+        },
+        {
+            summary:"Fix Broken Link",
+            description:"The link on the homepage leads to a non-existing page.",
+            project:"Project A",
+            personDiscoveredBy:"Kelo",
+            discDate:"2023-08-10",
+            statusOfIssue:"open",
+            issuePriority:"Low",
+            targetDate:"2023-08-25",
+            personAssigned:"Ashley",
+            resolutionDate:"",
+            resolutionSummary:""
+        },
+        {
+            summary: "UI Bug in Dashboard",
+            description: "Graphs on the dashboard are not rendering properly.",
+            project: "Project A",
+            personDiscoveredBy: "Chandri",
+            discDate: "2023-07-25",
+            statusOfIssue: "open",
+            issuePriority: "Medium",
+            targetDate: "2023-08-15",
+            personAssigned: "Ashley",
+            resolutionDate: "",
+            resolutionSummary: ""
+        },
+        {
+            summary: "Missing Product Images",
+            description: "Some product images are not showing up on the website.",
+            project: "Project C",
+            personDiscoveredBy: "Peter",
+            discDate: "2023-08-05",
+            statusOfIssue: "open",
+            issuePriority: "Low",
+            targetDate: "2023-08-20",
+            personAssigned: "Chandri",
+            resolutionDate: "",
+            resolutionSummary: ""
+        },
+        {
+            summary: "Authentication Error",
+            description: "Users are unable to log in due to an authentication error.",
+            project: "Project A",
+            personDiscoveredBy: "Peter",
+            discDate: "2023-08-10",
+            statusOfIssue: "overdue",
+            issuePriority: "High",
+            targetDate: "2023-08-20",
+            personAssigned: "Kelo",
+            resolutionDate: "",
+            resolutionSummary: ""
+        },
+        {
+            summary: "Mobile App Crashes",
+            description: "The mobile app crashes when users try to access certain features.",
+            project: "Project D",
+            personDiscoveredBy: "Kelo",
+            discDate: "2023-08-12",
+            statusOfIssue: "open",
+            issuePriority: "High",
+            targetDate: "2023-08-22",
+            personAssigned: "Chandri",
+            resolutionDate: "",
+            resolutionSummary: ""
+        },
+        {
+            summary: "Slow Loading Times",
+            description: "Website pages are loading slowly, affecting user experience.",
+            project: "Project B",
+            personDiscoveredBy: "Ashley",
+            discDate: "2023-08-15",
+            statusOfIssue: "overdue",
+            issuePriority: "Medium",
+            targetDate: "2023-08-21",
+            personAssigned: "Peter",
+            resolutionDate: "",
+            resolutionSummary: ""
+        },
+        {
+            summary: "Missing Data in Reports",
+            description: "Reports generated from the system are missing crucial data.",
+            project: "Project C",
+            personDiscoveredBy: "Chandri",
+            discDate: "2023-08-18",
+            statusOfIssue: "open",
+            issuePriority: "Medium",
+            targetDate: "2023-09-03",
+            personAssigned: "Peter",
+            resolutionDate: "",
+            resolutionSummary: ""
+        },
+        {
+            summary: "Payment Gateway Integration",
+            description: "Integrate a new payment gateway to expand payment options.",
+            project: "Project A",
+            personDiscoveredBy: "Kelo",
+            discDate: "2023-08-02",
+            statusOfIssue: "overdue",
+            issuePriority: "Low",
+            targetDate: "2023-08-20",
+            personAssigned: "Ashley",
+            resolutionDate: "",
+            resolutionSummary: ""
+        }
+    ];
+    
+    // Merge the sample issues
+    issueArr.push(...sampleIssues);
+
     // Storing form data
     function storeData(data) {
         localStorage.setItem('issueData', JSON.stringify(data));      // Store the issueArr in LocalStorage
