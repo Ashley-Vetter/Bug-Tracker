@@ -141,6 +141,30 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('assigned').value = issue.personAssigned;
         document.getElementById('resDate').value = issue.resolutionDate;
         document.getElementById('rsummary').value = issue.resolutionSummary;
+
+        // Assuming you have a button with an id 'updateIssue' for updating the issue
+        const updateButton = document.getElementById('updateIssue');
+        updateButton.addEventListener('click', function () {
+        // Update issue status based on user input
+        const newStatus = document.getElementById('status').value;
+        if (issue.statusOfIssue !== newStatus) {
+            // If the status has changed, remove the card
+            const cardToRemove = document.querySelector(`#ticketContainer .ticket #sum[textContent="${issue.summary}"]`).parentNode;
+            cardToRemove.remove();
+            
+            // Remove the issue from issueArr
+            const issueIndex = issueArr.findIndex(existingIssue => existingIssue.summary === issue.summary);
+            if (issueIndex !== -1) {
+                issueArr.splice(issueIndex, 1);
+            }
+            
+            // Store updated issueArr in localStorage
+            storeData(issueArr);
+        }
+        
+        // Close the form after updating
+        document.getElementById("form").style.display = "none";
+    });
     }
 });
 
