@@ -6,38 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="loginstyle.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Document</title>
+    <title>Bug Tracker Login</title>
 </head>
 
 <body>
-    <div class="outside-box">
+    <section class="container">
         <div class="wrapper">
-            <form id="logform" action="">
+            <form id="login-form" action="">
                 <h1>WELCOME</h1>
-                <p id="lol">Enter user credentials</p>
+                <p id="subtext">Enter user credentials</p>
+
                 <div class="input-box">
                     <input id="name" type="text" placeholder="Username" required>
                     <i id="user" class="bx bxs-user"></i>
                 </div>
                 <div class="input-box">
-                    <div class="helpbru">
-                        <i id="lock" class="bx bxs-lock-alt"></i>
-                        <input id="pass" type="password" placeholder="Password" required>
-                    </div>
+                    <i id="lock" class="bx bxs-lock-alt"></i>
+                    <input id="pass" type="password" placeholder="Password" required>
                 </div>
-                <button id="login" type="submit" class="btn">Login</button>
+
+                <button id="login-btn" type="submit" class="btn">Login</button>
                 <div class="register-link">
                     <p id="invalid"></p>
                 </div>
             </form>
         </div>
 
-        <div class="inside-outside-box">
-            <h2>Bug Tracker</h2> <br>
-            <p>project management made easy</p>
-
+        <div class="info-box">
+            <h2>Bug Tracker</h2>
+            <p>Project management made easy!</p>
+            <p>Create <strong>People</strong>, <strong>Projects</strong>, and <strong>Tickets</strong> with a few clicks.</p>
+            <p>For smoother Project Management</p>
         </div>
-    </div>
+    </section>
+        
     <script src="login.js"></script>
 </body>
 

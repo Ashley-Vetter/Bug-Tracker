@@ -1,16 +1,25 @@
-let username = "admin";
-let password = "admin";
+const defaultUser = {username: 'admin',password: 'admin'}
+const user1 = {username:'bob1978', password:'bob456'}
+const user2 = {username:'loremIps', password:'doloremque'}
 
-let form = document.getElementById("logform");
+const usernameInput = document.querySelector('#name');
+const passwordInput = document.querySelector('#pass');
+const invalidCreds = document.querySelector('#invalid');
+const loginForm = document.querySelector("#login-form");
+
 function handleForm(event) { 
     event.preventDefault();
+    checkUser();
+}
 
-    if(document.getElementById("name").value == username && document.getElementById("pass").value == password){
-        window.location.href = 'Home.html';
-    }
-    else {
-        document.getElementById("invalid").innerHTML = "invalid credentials";
+function checkUser(){
+    for(let user of [defaultUser, user1, user2]){
+        if(usernameInput.value === user.username && passwordInput.value === user.password){
+            window.location.href = 'Home.html';
+        }else{
+            invalidCreds.textContent = "Invalid Credentials"
+        }
     }
 }
 
-form.addEventListener('submit', handleForm);
+loginForm.addEventListener('submit', handleForm);
